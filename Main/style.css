@@ -67,19 +67,16 @@ p{
 	height: fit-content;
 }
 
-<<<<<<< HEAD
 .col-2 h1{
 	font-size:50px;
 	line-height:60px;
 	margin:25px 0;
-=======
+}
 
 .swiper-slide img{
 
 width:100%;
 
-
->>>>>>> 8240edb718fd2e26db0c499c2737a894eab9dbad
 }
 .swiper .swiper-button-prev, .swiper .swiper-button-next{
 
