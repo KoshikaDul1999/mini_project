@@ -52,21 +52,41 @@ p{
 	justify-content:space-around;
 }
 
-.col-2{
-	flex-basis:50%;
-	min-height:300px;
+.slider{
+	flex: 50%;
+	width: 30%;
+	height: 20%;
+	align-items: center;
+	justify-content: center;
+	margin-left: 100px;
 }
 
-.col-2 img{
-	max-width:100%;
-	padding:50px 0;
+.swiper{
+
+	width:100%;
+	height: fit-content;
 }
 
-.col-2 h1{
-	front-size:50px;
-	line-height:60px;
-	margin:25px 0;
+
+.swiper-slide img{
+
+width:100%;
+
+
 }
+.swiper .swiper-button-prev, .swiper .swiper-button-next{
+
+	color:black;
+
+}
+.swiper .swiper-pagination-bullet-active{
+
+	background: black;
+}
+
+
+
+
 
 .btn{
 	display:inline-blocks;
