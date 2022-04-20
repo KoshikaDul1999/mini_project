@@ -18,7 +18,7 @@ if(isset($_POST['username'])){
     $result=mysqli_query($con,$sql);
 
     if(mysqli_num_rows($result)==1){
-        echo "You have successfully logged in";
+        //echo "You have successfully logged in";
         exit();
     }
     else{
@@ -36,7 +36,7 @@ if(isset($_POST['username'])){
     <body>
         <div class="container">
             <img src="admin.jpg">
-            <form method="POST" action="#">
+            <form method="POST" action="admindashboard.html">
                 <div class="form-input">
                     <input type="text" name="username" placeholder="User Name">
                 </div>
