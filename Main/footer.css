@@ -3,10 +3,9 @@
 footer{
 	width: 100%;
 	bottom: 0;
-	background: linear-gradient(to right, #faadbd, #f9f5f9);
+	background: linear-gradient(to right, #25f5c4, #f283cd);
 	color: rgb(12, 12, 12);
 	padding: 100px 0 30px;
-	border-top-left-radius: 125px;
 	font-size: 13px;
 	line-height: 20px;
 }
