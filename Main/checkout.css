@@ -1,0 +1,101 @@
+body{
+
+font-family: Arial;
+font-size: 17px;
+padding: 8px;
+
+
+}
+*{
+    box-sizing: border-box;
+}
+.rowc{
+    display:flex;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+}
+.rowc .col-75{
+    margin: 0.5rem;
+    flex: 1 1 40rem;
+}
+.rowc .cart{
+    margin: 0.5rem;
+    flex: 1 1 0rem;
+}
+
+.containerc{
+
+    background-color: #f2f2f2;
+    padding:5px 20px 15px 20px;
+    border :1px solid lightgrey;
+    border-radius: 3px;
+
+}
+
+.col-50{
+
+    flex:50%;
+    padding: 0 16px;
+
+}
+input[type=text]{
+
+width:100%;
+margin-bottom:20px;
+padding:12px;
+border:1px solid #ccc;
+border-radius: 3px;
+
+}
+.icon-container{
+
+    margin-bottom:20px;
+    padding: 7px 0;
+}
+
+
+
+.lable{
+margin-bottom: 10px;
+display: block;
+
+}
+
+.btnc{
+
+    background-color: #04AA6D;
+    color:white;
+    padding :12px;
+    margin:10px 150px;
+    border:none;
+    width:100%;
+    border-radius:3px;
+    cursor:pointer;
+    font-size: 17px;
+
+}
+.btnc :hover{
+    background-color: lightgreen;
+}
+.col-25{
+    flex:25%;
+    padding:0 16px;
+
+}
+span.price{
+float:right;
+color:grey;
+
+}
+.checklogo{
+    position: relative;
+    width: 150px;
+    
+}
+
+.checkoutlogo span{
+   position: absolute;
+   margin-right: 15rem;
+   margin-top: 2.5rem;
+   z-index: 10;
+}
