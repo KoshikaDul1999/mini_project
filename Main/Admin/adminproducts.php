@@ -1,7 +1,10 @@
+<?php
+    include ("connection.php");
+?>
 <html>
     <head>
-        <title>Category Dashboard</title>
-        <link rel="stylesheet" href="admincategories.css">
+        <title>Product Dashboard</title>
+        <link rel="stylesheet" href="adminproducts.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     </head>
     <body>
@@ -30,11 +33,18 @@
             </center>
             <a href="admindashboard.html"><i class="fa fa-home"></i><span>Dashboard</span></a>
             <a href="adminorders.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i><span>Orders</span></a>
-            <a href="adminproducts.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Products</span></a>
-            <a class="active" href="#"><i class="fa fa-list" aria-hidden="true"></i><span>Categories</span></a>
+            <a class="active" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Products</span></a>
+            <a href="admincategories.html"><i class="fa fa-list" aria-hidden="true"></i><span>Categories</span></a>
             <a href="admincustomers.html"><i class="fa fa-users" aria-hidden="true"></i><span>Customers</span></a>
         </div>
         <!--slider bar end-->
-        
+
+        <!--Today-->
+        <div class="container">
+            <div class="content">
+            
+            <a href="addproduct.html"><input type="submit" value="Add new category"></a>
+            </div>
+        </div>
     </body>
 </html>

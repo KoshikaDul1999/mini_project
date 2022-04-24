@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <title>Add Product</title>
+    </head>
+    <style type="text/css">
+
+        body
+		{
+			margin: 0;
+			padding: 0;
+			background: url(addproduct.jfif);
+			background-size: cover;
+			height: 850px;
+			background-position: center;
+			font-family: sans-serif;
+		}
+
+        .container
+		{
+			width: 520px;
+			height: 600px;
+			color: rgb(255, 252, 252);
+			top: 50%;
+			left: 20%;
+			position: absolute;
+			transform: translate(-50%,-50%);
+			box-sizing: border-box;
+		}
+
+        .head
+		{
+			text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(45, 4, 4);
+		}   
+
+        .container input[type="text"], input[type="number"],input[type="file"]
+		{
+			border:none;
+			border-bottom: 1px solid rgb(12, 12, 12);
+			background: transparent;
+			outline: none;
+			height:40px;
+			color: rgb(3, 3, 3);
+			font-size: 16px;
+		}
+
+        .container label{
+            color: black;
+        }
+
+        .container textarea
+		{
+			border:none;
+			border-bottom: 1px solid rgb(12, 12, 12);
+			background: transparent;
+			outline: none;
+			height:40px;
+			color: rgb(3, 3, 3);
+			font-size: 16px;
+		}
+
+        .container input[type="submit"]
+		{
+			border:none;
+			outline: none;
+			height: 40px;
+            width: 180px;
+			background: #07df90;
+			color: #fff;
+			font-size: 18px;
+			border-radius: 10px;
+            align-content: center;
+		}
+
+		.container input[type="submit"]:hover
+		{
+			cursor: pointer;
+			background: #1bd5cf;
+			color: #000;
+		}
+
+
+    </style>
+    <body>
+        <div class="container">
+            <h1 class="head">Add new product</h1>
+                <div class="content">
+                    <form action="#" method="POST">
+                        <label for="">Select category</label>
+                            <select class="form-select">
+                                <option selected>Select Category</option>
+                                <option value="1">one</option>
+                                <option value="1">one</option>
+                                <option value="1">one</option>
+                                <option value="1">one</option>
+                                <option value="1">one</option>
+                            </select>
+                            <br>
+                        <label for="">Name : </label>
+                            <input type="text" required name="product_name" placeholder="Enter product name"><br>
+                        <label for="">Brand : </label>
+                            <input type="text" required name="p_brand" placeholder="Enter product brand"><br>
+                        <label for="">Color : </label>
+                            <input type="text" required name="p_color" placeholder="Enter product color"><br>
+                        <label for="">Originalprice : </label>
+                            <input type="text" required name="original_price" placeholder="Enter original price"><br>
+                        <label for="">Selling price : </label>
+                            <input type="text" required name="selling_price" placeholder="Enter selling price"><br>
+                        <label for="">Description : </label>
+                            <textarea rows="6" required name="p_description" placeholder="Enter description"></textarea><br><br>
+                        <label for="">Upload image : </label>
+                            <input type="file" required name="p_image"><br>
+                        <label for="">Quantity : </label>
+                            <input type="number" required name="p_qty" placeholder="Enter quantity"><br><br> 
+                        <input type="submit" value="Add product">
+                </div>             
+        </div>
+    </body>
+</html>

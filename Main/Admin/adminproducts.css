@@ -124,14 +124,14 @@ label #sidebar_btn:hover{
     padding-top: 20px;
 }
 
-.content{
+/*.content{
     margin-left: 250px;
     background: url(adminbg1.jpg);
     background-position: center;
     background-size: cover;
     height: 100vh;
     transition: 0.5s;
-}
+}*/
 
 #check:checked ~ .content{
     margin-left: 60px;
@@ -141,3 +141,27 @@ label #sidebar_btn:hover{
     display: none;
 }
 
+.container{
+    position: fixed;
+    right: 0;
+    width: 80vw;
+    height: 100vh;
+}
+
+.container .content{
+    position: relative;
+    margin-top: 10vh;
+    min-height: 90vh;
+    background: url(adminbg1.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    transition: 0.5s;
+    
+}
+
+.container .content input[type="submit"]:hover{
+    cursor: pointer;
+    background: #1bd5cf;
+    color: #000;
+}

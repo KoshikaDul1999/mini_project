@@ -1,12 +1,8 @@
 <?php
+    include ("connection.php");
+?>
 
-$host="localhost";
-$user="root";
-$password="";
-$dbname="ecom";
-
-$con=mysqli_connect($host,$user,$password,$dbname);
-mysqli_select_db($con,$dbname);
+<?php
 
 if(isset($_POST['username'])){
 
