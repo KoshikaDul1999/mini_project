@@ -1,3 +1,30 @@
+<?php
+    include ("connection.php");
+    //include ("myfunctions.php");
+?>
+
+<?php
+    if(isset($_POST['add_category_btn']))
+    {
+        $category_name = $_POST['category_name'];
+        $c_description = $_POST['c_description'];
+
+        $sql="INSERT INTO category (category_name,c_description) VALUES ('$category_name','$c_description')";
+
+        $res=mysqli_query($con,$sql);
+
+        if($res)
+        {
+            
+        }
+        else
+        {
+           
+        }
+
+    }
+?>
+
 <html>
     <head>
         <title>Add Category</title>
@@ -89,8 +116,6 @@
                     <form action="#" method="POST">
                         <label for="">Name : </label><br>
                             <input type="text" required name="category_name" placeholder="Enter category name"><br><br>
-                        <label for="">Upload image : </label>
-                            <input type="file" required name="c_image"><br><br>
                         <label for="">Description : </label><br>
                             <textarea rows="6" required name="c_description" placeholder="Enter description"></textarea><br><br>
                         <input type="submit" value="Add category" name="add_category_btn">
