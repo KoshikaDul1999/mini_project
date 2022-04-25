@@ -10,7 +10,11 @@ if(!$conn)
 {
     die("Connection failed". mysqli_connect_error());
 }
+<<<<<<< HEAD
 echo "Connected Successfully";
+=======
+echo "Conneected Successfully";
+>>>>>>> 16040447eb178c155838dc2307c4c8a2666ee57c
 
 mysqli_close($conn);
 ?>

@@ -50,21 +50,47 @@ p{
 	justify-content:space-around;
 }
 
-.col-2{
-	flex-basis:50%;
-	min-height:300px;
+/*slider*/
+.slider{
+	flex: 50%;
+	width: 30%;
+	height: 20%;
+	align-items: center;
+	justify-content: center;
+	margin-left: 100px;
 }
 
-.col-2 img{
-	max-width:100%;
-	padding:50px 0;
+.swiper{
+
+	width:100%;
+	height: 400px;
 }
 
+
+.swiper-slide img{
+
+width:100%;
+height: 400px;
+
+
+}
+.swiper .swiper-button-prev, .swiper .swiper-button-next{
+
+	color:black;
+
+<<<<<<< HEAD
 .col-2 h1{
 	size:50px;
 	line-height:60px;
 	margin:25px 0;
+=======
+>>>>>>> 16040447eb178c155838dc2307c4c8a2666ee57c
 }
+.swiper .swiper-pagination-bullet-active{
+
+	background: black;
+}
+
 
 .btn{
 	display:inline-blocks;
@@ -172,6 +198,7 @@ button.active{
 	border-radius:30px;
 	font-weight:bolder;
 }
+<<<<<<< HEAD
 --------------------------------------------------------------------------------
 input[type=text], input[type=password] {
 	width: 100%;
@@ -266,3 +293,21 @@ form .button{
 
 
 
+=======
+
+/*SLIDER CSS*/
+
+.header .container .mainSlider{
+	display: flex;
+	flex-direction: row;
+}
+
+.header .container .mainSlider .left-side-text{
+	flex: 1;
+	max-width: 30%;
+}
+
+.header .container .mainSlider .slider{
+	flex: 1;
+}
+>>>>>>> 16040447eb178c155838dc2307c4c8a2666ee57c
