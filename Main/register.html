@@ -105,52 +105,115 @@
 <!------------------------------------------------------------------------------------------------------------------------->	
 	
 	
-	<h3> &emsp; Registration</h3>	
-	<hr class="soft"/>
-	 <h3>&emsp; Your Personal Details</h3><br><br>
+	<!--<center><h3> &emsp; Registration</h3>	</center>-->
+	<!--<hr class="soft"/>-->
+	 <!--<center> <h3>&emsp; Welcome  haay User</h3></center><br><br>
 		
-		<center><img src="cart.png"></center>
+		<img src="cart.png" align="left">
 		
-        <form name="RegForm" action="/submit.php" 
-              onsubmit="return GEEKFORGEEKS()" method="post"> 
-            <p>Name: <input type="text" 
-                            size="65" name="Name" /></p> 
-            <br> 
-            <p>Address: <input type="text" 
-                               size="65" name="Address" /> 
-          </p> 
-            <br /> 
-            <p>E-mail Address: <input type="text" 
-                            size="65" name="EMail" /></p> 
-            <br> 
-            <p>Password: <input type="text" 
-                         size="65" name="Password" /></p> 
-            <br> 
-            <p>Telephone: <input type="text" 
-                        size="65" name="Telephone" /></p> 
-            <br> 
-  
-            <p> 
-                Select Your Country 
-                <select type="text" value="" name ="Subject"> 
+        <form name="RegForm" action="/submit.php"  onsubmit="return GEEKFORGEEKS()" method="post"> 
+         <table align="center">
+            <tr>
+                <td>First Name:</td>
+               <td> <input type="text" border="none" size="20" name="fName" placeholder="Enter your first name"></td>
+            </tr>
+            <tr>
+               <td> Last Name:</td>
+                <td><input type="text" border="none" size="20" name="lName" placeholder="Enter your second name"></td>
+             </tr>
+             
+            <tr>
+                <td>Address:</td> 
+                <td><input type="text"
+                    size="65" name="Address" placeholder="Enter your home address" /></td>
+            </tr> 
+            
+            <tr>
+                <td>E-mail Address: </td>
+                <td><input type="text" 
+                    size="65" name="EMail" placeholder="Enter your mail address" /></td>
+            </tr>
+            
+            <tr>
+                <td>Password:</td>
+                <td><input type="text" 
+                    size="65" name="Password" placeholder="Enter your mail password" /></td> 
+            </tr>
+            
+            <tr>
+                <td>Telephone:</td> 
+                <td><input type="text" 
+                    size="65" name="Telephone" placeholder="Enter your mobile number" /></td>
+            </tr>
+            
+            <tr>
+                <td>Select Your Country </td>
+                <td><select type="text" value="" name ="Subject"> 
                     <option>Sri Lanka</option> 
                     <option>India</option> 
                     <option>UK</option> 
                     <option>USA</option> 
                     <option>Australia</option> 
-                </select> 
-            </p> 
-            <br> 
-            <br> 
-   
-                <input type="submit" 
-                       value="Send" name="Submit" /> 
-                <input type="reset" 
-                       value="Reset" name="Reset" /> 
-            </p> 
+                </select> </td>
+            </tr> 
+            <tr></tr>
+            <tr></tr>
 
-		<br><br><br>
-		
+            <tr align="center">
+                <td><input type="submit" class="b1"
+                    value="Send" name="Submit" />
+                <input type="reset" class="b2"
+                    value="Reset" name="Reset" /> </td>
+            </tr> 
+        </table>
+		<br><br><br>-->
+<!------------------------new reg-------------------------------------->
+        <div class="container2">
+            <div class="title">Registration</div>
+            <form name="RegForm" action="/submit.php"  onsubmit=" GEEKFORGEEKS()" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">First Name</span>
+                        <input type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Last Name</span>
+                        <input type="text" placeholder="Enter your last name" reqiured>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Address</span>
+                        <input type="text" placeholder="Enter your address" reqiured>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email Address</span>
+                        <input type="text" placeholder="Enter your mail address" reqiured>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span>
+                        <input type="text" placeholder="Enter password" reqiured>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Telephone</span>
+                        <input type="text" placeholder="Enter your phone number" reqiured>
+                    </div>
+                    <div class="country">
+                        <span class="country-title">Select Your Country </span>
+                        <select type="text" value="" name ="Subject"> 
+                            <option>Sri Lanka</option> 
+                            <option>India</option> 
+                            <option>UK</option> 
+                            <option>USA</option> 
+                             <option>Australia</option> 
+                        </select> 
+                    </div>
+                    <div class="button">
+                        <input type="submit" class="b1" value="Register" name="Submit" />
+                        <input type="reset" class="b2" value="Reset" name="Reset" />
+                    </div>
+                </div>
+            </form>
+        </div>
+	---------------------------------------------------------------------------	
 		<h2><i>Brand and Products</i></h2>
 		
 		<table border="1">
