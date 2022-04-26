@@ -161,15 +161,23 @@
 
                 if(mysqli_query($con,$sql)){
                    echo "<script>
-                   swal({
-                    title: 'Good job!',
-                    text: 'You clicked the button!',
-                    icon: 'success',
-                    button: 'Aww yiss!',
-                  });
+                            swal({
+                                title: 'Successfuly Added',
+								text: 'Data added successfully!',
+								icon: 'success',
+								button: 'Wow!',
+                            });
                    </script>";
                    //echo '<script language="javascript">window.location.href="addproduct.php"</script>'; 
                 }else{
+                    echo "<script>
+							swal({
+								title: 'Error',
+								text: 'Data didnot add!',
+								icon: 'warning',
+								button: 'Ok',
+							});
+                   		</script>";
                     echo "Error:".mysqli_error($con);
                 }
             }else{

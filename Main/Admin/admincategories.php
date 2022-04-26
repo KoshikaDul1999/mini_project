@@ -35,27 +35,28 @@
             </center>
             <a href="admindashboard.html"><i class="fa fa-home"></i><span>Dashboard</span></a>
             <a href="adminorders.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i><span>Orders</span></a>
-            <a href="adminproducts.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Products</span></a>
+            <a href="adminproducts.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Products</span></a>
             <a class="active" href="#"><i class="fa fa-list" aria-hidden="true"></i><span>Categories</span></a>
             <a href="admincustomers.html"><i class="fa fa-users" aria-hidden="true"></i><span>Customers</span></a>
         </div>
         <!--slider bar end-->
         <div class="container">
             <div class="content">
-                <a href="addcategory.php"><input type="submit" value="Add new category"></a>
+                <a href="addcategory.php"><input type="submit" class="add-cate" value="Add new category"></a>
 
-                <div class="card">
+                <div class="card" >
+            
                     <div class="card-header">
-                        <h4>Categories</h4>
+                        <h4 style="color:rgb(247, 8, 84); font-size:40px; font-style:arial;"><center>Categories</center></h4>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered" style="margin-left:auto; margin-right:auto; align-content:center; margin-top:100px; ">
                             <thead>
                                 <tr>
-                                    <th>Category ID</th>
-                                    <th>Category Name</th>
-                                    <th>Description</th>
-                                    <th>Delete</th>
+                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Category ID</th>
+                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Category Name</th>
+                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Description</th>
+                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -68,12 +69,12 @@
                                         {
                                             ?>
                                             <tr>
-                                                <td> <?= $item['category_id']; ?></td>
-                                                <td> <?= $item['category_name']; ?></td>
-                                                <td> <?= $item['c_description']; ?></td>
+                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['category_id']; ?></td>
+                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['category_name']; ?></td>
+                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['c_description']; ?></td>
 
-                                                <td>
-                                                    <a href="#" class="btn">Delete</a>
+                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">
+                                                <a href="#" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:15px 32px; border-radius:15px;">Delete</a>
                                                 </td>
                                             </tr>
                                         <?php

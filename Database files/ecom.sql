@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 25, 2022 at 08:59 PM
+-- Generation Time: Apr 26, 2022 at 10:28 PM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `category_name` varchar(100) NOT NULL,
   `c_description` varchar(300) NOT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
@@ -65,7 +65,9 @@ INSERT INTO `category` (`category_id`, `category_name`, `c_description`) VALUES
 (12, 'Electronics', 'Electronic items'),
 (14, 'Beauty and cosmetics', 'Beauty & cosmetic items'),
 (15, 'Watches', 'branded watches'),
-(16, 'Shoes', 'Branded shoes');
+(16, 'Shoes', 'Branded shoes'),
+(24, 'Men clothing', 'Branded'),
+(23, 'Women clothing', 'Branded ');
 
 -- --------------------------------------------------------
 
@@ -86,25 +88,25 @@ CREATE TABLE IF NOT EXISTS `product` (
   `p_image` varchar(250) NOT NULL,
   `p_qty` int(20) NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=69 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=119 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`product_id`, `category_id`, `product_name`, `p_brand`, `p_color`, `orginal_price`, `selling_price`, `p_description`, `p_image`, `p_qty`) VALUES
-(11, 13, 'Nikon Coolpix L340', 'nikon', 'black', 65000, 75000, '3 year warrenty', '02.png', 5),
-(10, 13, 'canon digital SLR', 'canon', 'black', 70000, 80000, '5 year warrenty', '01.png', 5),
-(12, 13, 'Nikon D90 ', 'nikon', 'black', 85000, 95000, '5 year warrenty', '03.png', 5),
-(13, 13, 'Epic Camera', 'nikon', 'black', 60000, 68000, '3 year warrenty', '04.png', 5),
-(14, 13, 'Telephoto Lens', 'Vivitar ', 'black & white', 75000, 80000, '5 year warrenty', '05.png', 6),
-(15, 13, 'Mobile Lens', 'iPad iPhone Samsung', 'black', 650, 1000, '3 month warrenty', '06.png', 25),
-(16, 13, 'Network Camera', 'CIVS-IPC-4300E 4300E ', 'white', 1200, 1900, '3 month warrenty', '07.png', 20),
-(17, 13, 'IP Camera', 'PTZ', 'white', 16000, 20000, '10 month warrenty', '08.png', 15),
-(18, 13, 'Camera Tripod', 'drid', 'black', 2200, 3000, '3 month warranty', '09.png', 15),
-(19, 13, 'Axis Gimbal', 'Zhiyun', 'black', 55000, 60000, '2 year warranty', '10.png', 5),
-(20, 13, 'Camera Backpack', 'Rucksack', 'black', 8000, 10000, 'branded', '11.png', 50),
-(21, 13, 'Sony Battery Charger', 'Sony', 'black', 8500, 10000, '3 month warranty', '12.png', 25),
+(11, 13, 'Nikon Coolpix L340', 'nikon', 'black', 65000, 75000, 'Digital SLR Camera 3 Inch TFT LCD Screen HD 16MP 1080P 16X Zoom Anti-shake', '02.png', 5),
+(10, 13, 'canon digital SLR', 'canon', 'black', 70000, 80000, 'Nikon Coolpix L340 20.2MP Digital Camera - Black', '01.png', 5),
+(12, 13, 'Nikon D90 ', 'nikon', 'black', 85000, 95000, 'Nikon D90 12.3 Megapixel DX DSLR Digital Camera + 18-55mm f3.5-5.6 VR lens', '03.png', 5),
+(13, 13, 'Epic Camera', 'nikon', 'black', 60000, 68000, 'DRAGON W/ Ti PL MOUNT / SIDE SSD / 6k FULL CAMERA PACKAGE W/ LENS', '04.png', 5),
+(14, 13, 'Telephoto Lens', 'Vivitar ', 'black & white', 75000, 80000, 'Vivitar Auto Telephoto 300mm f/5.6 Prime Camera Lens Fits Minolta SR Mount', '05.png', 6),
+(15, 13, 'Mobile Lens', 'iPad iPhone Samsung', 'black', 650, 1000, 'Mobile Phone 180° Camera Lens Fish Eye Angle Clip for iPad iPhone Samsung', '06.png', 25),
+(16, 13, 'Network Camera', 'CIVS-IPC-4300E 4300E ', 'white', 1200, 1900, 'Cisco CIVS-IPC-4300E 4300E Network Camera', '07.png', 20),
+(17, 13, 'IP Camera', 'PTZ', 'white', 16000, 20000, '1080P PTZ Security WIFI Camera Waterproof Outdoor Wireless IP CCTV Pan IR Cam', '08.png', 15),
+(18, 13, 'Camera Tripod', 'drid', 'black', 2200, 3000, 'Professional Camera Tripod Stand Holder Mount for iPhone Samsung Cell Phone', '09.png', 15),
+(19, 13, 'Axis Gimbal', 'Zhiyun', 'black', 55000, 60000, 'Zhiyun Weebill S 3-Axis Gimbal for Mirrorless & DSLR Cameras 300% Improved Motor', '10.png', 5),
+(20, 13, 'Camera Backpack', 'Rucksack', 'black', 8000, 10000, 'LARGE DSLR SLR Camera Backpack Rucksack Bag Case+RainCover For Sony', '11.png', 50),
+(21, 13, 'Sony Battery Charger', 'Sony', 'black', 8500, 10000, 'V-mount V Lock Battery Charger DC Power Supply Dual Channel for Sony Camera', '12.png', 25),
 (22, 14, 'Night face cream', 'JERGENS', 'various', 2000, 2300, 'facewash & cream', '01.png', 20),
 (23, 14, 'Face Care Pack', 'facia', 'black', 2000, 2500, 'Anti-cellulite, firming, moisturising, nourish, protective, regeneration.', '02.png', 25),
 (24, 14, 'Makeup Brush set', 'facia', 'black', 500, 800, '12pcs Pear Makeup Brush set Foundation Powder Concealers cosmetic brush sets.', '03.png', 25),
@@ -151,7 +153,30 @@ INSERT INTO `product` (`product_id`, `category_id`, `product_name`, `p_brand`, `
 (65, 16, 'Nike Basketball Shoes', 'nike', 'black & white', 12000, 13000, 'Strategically placed Kurimmaterial that feels almost like a second skin white giving you lightweight flexibility and lasting support.', 's8.png', 100),
 (66, 16, 'Nike Kyrie Shoes', 'nike', 'gray', 7000, 8000, 'A new Flex Groove delivers excellent flexibility and traction to help you find your groove.', 's9.png', 100),
 (67, 16, 'AU Training Shoes', 'Au', 'black & white', 4000, 5000, 'These shoes were built for athletes who amp up their training with higher intensity bursts of activity and cardio.', 's10.png', 100),
-(68, 16, 'Brooks Ghost 12', 'brook', 'red & white', 7000, 8000, 'More important thing is finding the right running shoe to avoid injury and up your fitness', 's11.png', 100);
+(99, 23, 'Stylish Party Dress', 'she serious', 'black & white', 3500, 3800, 'Women party evening short Stylish Party Dress casual', '08.png', 100),
+(98, 23, 'Party Dress', 'she serious', 'blue', 3300, 3500, 'She Series - Real Women Party Version 1 Short-Sleeve', '07.png', 100),
+(97, 23, 'Floral Party Dress', 'maxi', 'black & white', 3200, 3500, 'Floral Summer Women Clothes Plus Size Casual Maxi Dr', '06.png', 100),
+(96, 23, 'Party Dress', 'maxi', 'white and gray', 2800, 3000, 'Summer Women Clothes Plus Size Casual Maxi Dr', '05.png', 100),
+(95, 23, 'Summer Party Dress', 'maxi', 'brown', 2000, 2300, 'Floral Summer Evening Party Women Clothes Plus Size Casual Maxi Dr', '04.png', 100),
+(94, 23, 'Casual summer dress', 'maxi', 'black & white', 2500, 2800, 'Fashion Party Casual summer Dress V Neck beach Women Womens Maxi sundress', '03.png', 100),
+(93, 23, 'Casual short-sleevet', 'maxi', 'mixed', 1300, 1600, 'Midi beach long casual cocktail floral party summer plus size maxi Women evening', '02.png', 100),
+(92, 23, 'Short Sleevet', 'she serious', 'green', 1000, 1200, 'She Series - Real Women Version 1 Short-Sleeve', '01.png', 100),
+(100, 23, 'Floral Women cocktail', 'maxi', 'white', 2500, 2800, 'Floral Women cocktail plus size maxi evening short dress beach summer casual', '09.png', 100),
+(101, 23, 'Sport T-shirts', 'Tecno', 'blue and pink', 2400, 2600, 'Relief Records T Shirt - Chicago House Techno EDM', '10.png', 100),
+(102, 23, 'Sports Practice T-shirt', 'Tecno', 'red', 1400, 1600, 'Relief Records T Shirt - Chicago House Techno EDM ', '11.png', 100),
+(103, 23, 'Sports Practice T-shirt', 'maxi', 'gray', 3500, 3800, 'Sunset Curve Julie And The Phantoms Band Women Top T Shirt 2689 ', '12.png', 100),
+(105, 24, 'Adidas Sports T-shirt', 'adidas', 'black', 1800, 2000, 'Made with moisture-wicking fabrics and soft cotton, our mens shirts are built to keep you comfortable all day.', '01.png', 100),
+(106, 24, 'Classic T-shirt', 'crewneck', 'green', 700, 850, 'Mens Plain Crewneck Classic Short Sleeves T-shirt', '02.png', 100),
+(107, 24, 'Slim fit T-shirt', 'maxi', 'black', 700, 850, 'Mens Slim Fit O Neck Long Sleeve Pullover Muscle Tee Casual Basic T-shirt', '03.png', 100),
+(108, 24, 'Klein Men T-shirt', 'maxi', 'gray', 1300, 1550, 'Calvin Klein Men T-Shirt Crew neck Micro Modal Liquid Slim', '04.png', 100),
+(109, 24, 'Klein T-shirt', 'maxi', 'dark green', 1100, 1300, 'Liverpool FC Mens Drak This Is Anfield T-Shirt LFC', '05.png', 100),
+(110, 24, 'Adidas T-shirt', 'adidas', 'gray', 1800, 2000, 'Nintendo Zelda Triforce Black Logo Mens Graphic T-Shirt New', '06.png', 100),
+(111, 24, 'Sports T-shirts', 'maxi', 'green', 2300, 2500, 'Sports Tie Fighter T Shirt Blueprint Schematic Official NEW S M L XL XXL', '07.png', 100),
+(112, 24, 'Cotton T-Shirt', 'maxi', 'yellow', 2500, 2800, 'Urban Yellow T-Shirt  100% Cotton Beach Top All Sizes New', '08.png', 100),
+(113, 24, 'Cotton Sports T-shirt', 'maxi', 'yellow', 2800, 3000, 'New 100% Genuine Polo Scott Mens Lambswool Round-Neck', '09.png', 100),
+(114, 24, 'Cotton T-Shirt', 'Steve', 'red', 850, 1000, 'Steve McQueen T-SHIRT Cult Classic Mans Retro ALL SIZES', '10.png', 100),
+(115, 24, 'Classic T-shirt', 'Steve', 'red', 2600, 2800, 'AAA ALSTYLE Mens Plain Classic Short Sleeves T-shirt 1301', '11.png', 100),
+(116, 24, 'Cotton T-Shirt', 'arast', 'white', 2600, 2800, 'Classic Cotton T SHIRT ', '12.png', 100);
 
 -- --------------------------------------------------------
 

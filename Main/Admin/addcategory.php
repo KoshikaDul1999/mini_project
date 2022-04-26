@@ -4,32 +4,12 @@
     //include ("myfunctions.php");
 ?>
 
-<?php
-    if(isset($_POST['add_category_btn']))
-    {
-        $category_name = $_POST['category_name'];
-        $c_description = $_POST['c_description'];
 
-        $sql="INSERT INTO category(category_name,c_description) VALUES ('$category_name','$c_description')";
-
-        $res=mysqli_query($con,$sql);
-
-        if($res)
-        {
-			echo "Data inserted sucess";
-			header('Location:admincategories.php');
-        }
-        else
-        {
-			echo "Error:".mysqli_error($con);
-        }
-
-    }
-?>
 
 <html>
     <head>
         <title>Add Category</title>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
     <style type="text/css">
 
@@ -124,7 +104,43 @@
                 </div>             
         </div>
 
-		
+		<?php
+			if(isset($_POST['add_category_btn']))
+			{
+				$category_name = $_POST['category_name'];
+				$c_description = $_POST['c_description'];
+
+				$sql="INSERT INTO category(category_name,c_description) VALUES ('$category_name','$c_description')";
+
+				$res=mysqli_query($con,$sql);
+
+				if($res)
+				{
+					echo "<script>
+							swal({
+								title: 'Successfuly Added',
+								text: 'Data added successfully!',
+								icon: 'success',
+								button: 'Wow!',
+							});
+                   </script>";
+					//header('Location:admincategories.php');
+				}
+				else
+				{
+					echo "<script>
+							swal({
+								title: 'Error',
+								text: 'Data didnot add!',
+								icon: 'warning',
+								button: 'Ok',
+							});
+                   		</script>";
+					//echo "Error:".mysqli_error($con);
+				}
+
+			}
+?>
 
     </body>
 </html>

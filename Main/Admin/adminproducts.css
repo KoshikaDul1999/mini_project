@@ -141,10 +141,15 @@ label #sidebar_btn:hover{
     display: none;
 }
 
-.container .content a{
-    position: fixed;
+/*.container .content .add-pro{
     margin-top: 5rem;
-}
+    padding: 15px 25px;
+    border: none;
+    background-color: #5e0bed;
+    color: #fff;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}*/
 
 .container .content input[type="submit"]:hover{
 			cursor: pointer;

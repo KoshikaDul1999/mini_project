@@ -42,33 +42,29 @@
         <!--slider bar end-->
         <div class="container">
             <div class="content">
-                <a href="addproduct.php"><input type="submit" value="Add new product"></a>
-            </div>
+                <a href="addproduct.php"><input type="submit" class="add-pro" value="Add new product" style="margin-top: 2rem; padding: 15px 25px;  border: none; background-color: #5e0bed; color: #fff; font-size: 20px; font-family: Georgia, 'Times New Roman', Times, serif;"></a>
 
             <div class="card">
                 <div class="card-header">
-                    <h4>Products</h4>
+                    <h4 style="color:rgb(247, 8, 84); font-size:40px; font-style:arial;"><center>Products</center></h4>
                 </div>
                 <div class="card-body">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" style="margin-left:auto; margin-right:auto; align-content:center; margin-top:100px;  ">
                         <thead>
                             <tr>
-                                <th>Product ID</th>
-                                <th>Category ID</th>
-                                <th>Product Name</th>
-                                <th>Brand</th>
-                                <th>colour</th>
-                                <th>Original Price</th>
-                                <th>Selling Price</th>
-                                <th>Description</th>
-                                <th>Quantity</th>
-                                <th>Image</th>
-                                <th>Delete</th>
+                                <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Product ID</th>
+                                <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Category ID</th>
+                                <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Product Name</th>
+                                <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Brand</th>
+                                <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Selling Price</th>
+                                <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Quantity</th>
+                                <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Image</th>
+                                <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                                $categories = getAll("product");
+                                $products = getAll("product");
 
                                 if(mysqli_num_rows($products) > 0)
                                 {
@@ -76,21 +72,18 @@
                                     {
                                         ?>
                                         <tr>
-                                            <td> <?= $item['product_id']; ?></td>
-                                            <td> <?= $item['category_id']; ?></td>
-                                            <td> <?= $item['product_name']; ?></td>
-                                            <td> <?= $item['p_brand']; ?></td>
-                                            <td> <?= $item['p_color']; ?></td>
-                                            <td> <?= $item['original_price']; ?></td>
-                                            <td> <?= $item['selling_price']; ?></td>
-                                            <td> <?= $item['p_description']; ?></td>
-                                            <td> <?= $item['p_qty']; ?></td>
-                                            <td>
-                                                <img src="uploads/<?= $item['p_image']; ?>" width="20px" height="20px" alt="<?= $item['product_name']; ?>">
+                                            <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['product_id']; ?></td>
+                                            <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['category_id']; ?></td>
+                                            <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['product_name']; ?></td>
+                                            <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['p_brand']; ?></td>
+                                            <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['selling_price']; ?></td>
+                                            <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['p_qty']; ?></td>
+                                            <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">
+                                                <img src="uploads/<?= $item['p_image']; ?>" width="80px" height="80px" alt="<?= $item['product_name']; ?>">
                                             </td>
 
-                                            <td>
-                                                <a href="#" class="btn">Delete</a>
+                                            <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">
+                                                <a href="#" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px;">Delete</a>
                                             </td>
                                         </tr>
                                     <?php
@@ -106,7 +99,7 @@
                     </table>
                 </div>
             </div>
-
+            </div>
         </div>
     </body>
 </html>
