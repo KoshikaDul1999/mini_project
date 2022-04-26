@@ -1,4 +1,5 @@
 <?php
+	//session_start();
     include ("connection.php");
     //include ("myfunctions.php");
 ?>
@@ -9,17 +10,18 @@
         $category_name = $_POST['category_name'];
         $c_description = $_POST['c_description'];
 
-        $sql="INSERT INTO category (category_name,c_description) VALUES ('$category_name','$c_description')";
+        $sql="INSERT INTO category(category_name,c_description) VALUES ('$category_name','$c_description')";
 
         $res=mysqli_query($con,$sql);
 
         if($res)
         {
-            
+			echo "Data inserted sucess";
+			header('Location:admincategories.php');
         }
         else
         {
-           
+			echo "Error:".mysqli_error($con);
         }
 
     }
@@ -121,5 +123,8 @@
                         <input type="submit" value="Add category" name="add_category_btn">
                 </div>             
         </div>
+
+		
+
     </body>
 </html>

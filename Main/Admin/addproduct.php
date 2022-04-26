@@ -1,50 +1,13 @@
 <?php
     include ("connection.php");
-    if(isset($_POST['add_product_btn']))
-    {
-        $cat_id='';
-
-       // $dir="uploads/";
-        //$filename=basename($_FILES["file"]["name"]);
-       // $filepath=$dir.$filename;
-       // $filetype=pathinfo($filepath,PATHINFO_EXTENSION);
-
-        $filename=$_FILES['file']['name'];
-        $cat_id=$_POST['cat_id'];
-        $imageFileType=strtolower(pathinfo($filename,PATHINFO_EXTENSION));
-        $extensions_arr = array("jpg","jpeg","png","gif");
-        $product_name = $_POST['product_name'];
-        $p_brand = $_POST['p_brand'];
-        $p_color = $_POST['p_color'];
-        $original_price = $_POST['original_price'];
-        $selling_price = $_POST['selling_price'];
-        $p_description = $_POST['p_description'];
-        $p_qty = $_POST['p_qty'];
-       
-        if(in_array($imageFileType,$extensions_arr)){
-
-            if(move_uploaded_file($_FILES["file"]["tmp_name"],'uploads/'.$filename)){
-                $sql="INSERT INTO `product` (`category_id`, `product_name`, `p_brand`, `p_color`, `orginal_price`, `selling_price`, `p_description`, `p_image`, `p_qty`)
-                VALUES ('$cat_id', '$product_name', '$p_brand', '$p_color', '$original_price', '$selling_price', '$p_description', '$filename', '$p_qty')";
-
-                if(mysqli_query($con,$sql)){
-                    echo "Data inserted sucess";
-                }else{
-                    echo "Error:".mysqli_error($con);
-                }
-            }else{
-                echo 'Error in uploading file - '.$_FILES['file']['name'].'';
-            }
-        }
-
-        
-    }
 ?>
 
 <html>
     <head>
         <title>Add Product</title>
     </head>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <style type="text/css">
 
         body
@@ -129,7 +92,7 @@
         <div class="container">
             <h1 class="head">Add new product</h1>
                 <div class="content">
-                    <form action="addproduct.php" method="POST" enctype="multipart/form-data">
+                    <form method="POST" enctype="multipart/form-data">
                         <label for="">Select category</label>
                             <select name="cat_id">
                                 <option selected>Select Category</option>
@@ -166,5 +129,60 @@
                 </div> 
             </form>            
         </div>
+
+        <?php
+    
+    if(isset($_POST['add_product_btn']))
+    {
+        $cat_id='';
+
+       // $dir="uploads/";
+        //$filename=basename($_FILES["file"]["name"]);
+       // $filepath=$dir.$filename;
+       // $filetype=pathinfo($filepath,PATHINFO_EXTENSION);
+
+        $filename=$_FILES['file']['name'];
+        $cat_id=$_POST['cat_id'];
+        $imageFileType=strtolower(pathinfo($filename,PATHINFO_EXTENSION));
+        $extensions_arr = array("jpg","jpeg","png","gif");
+        $product_name = $_POST['product_name'];
+        $p_brand = $_POST['p_brand'];
+        $p_color = $_POST['p_color'];
+        $original_price = $_POST['original_price'];
+        $selling_price = $_POST['selling_price'];
+        $p_description = $_POST['p_description'];
+        $p_qty = $_POST['p_qty'];
+       
+        if(in_array($imageFileType,$extensions_arr)){
+
+            if(move_uploaded_file($_FILES["file"]["tmp_name"],'uploads/'.$filename)){
+                $sql="INSERT INTO `product` (`category_id`, `product_name`, `p_brand`, `p_color`, `orginal_price`, `selling_price`, `p_description`, `p_image`, `p_qty`)
+                VALUES ('$cat_id', '$product_name', '$p_brand', '$p_color', '$original_price', '$selling_price', '$p_description', '$filename', '$p_qty')";
+
+                if(mysqli_query($con,$sql)){
+                   echo "<script>
+                   swal({
+                    title: 'Good job!',
+                    text: 'You clicked the button!',
+                    icon: 'success',
+                    button: 'Aww yiss!',
+                  });
+                   </script>";
+                   //echo '<script language="javascript">window.location.href="addproduct.php"</script>'; 
+                }else{
+                    echo "Error:".mysqli_error($con);
+                }
+            }else{
+                echo 'Error in uploading file - '.$_FILES['file']['name'].'';
+            }
+        }
+
+        
+    }
+?>
+
+       
     </body>
 </html>
+
+
