@@ -1,43 +1,91 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Online Shoping Center</title>
-	<link rel="stylesheet" href="../style.css">
-</head>
-<body>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>checkout page</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+      <link rel="stylesheet" href="checkout.css">
+   </head>
+   <body>
+      <div class="checkoutlogo">
+         <h2><img class="checklogo" src="logo.png"><span>Haay Checkout</span></h2>
+      </div>
+      <div class="rowc">
+         <div class="col-75">
+            <div class="containerc">
+               <form action="">
+                  <div class="rowc">
+                     <div class="bill-info">
+                        <h3>Billing Address</h3>
+                        <label for="fname"><i class="fa fa-user"></i>Full Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder ="Enter you name">
 
-	<a href="../Main/register.html">
-		<div class="sizes">
-			<button>Register</button>
-		</div>
-	</a>
+                        <label for="email"><i class="fa fa-envelope"></i>Email</label>
+                        <input type="text" id="email" name="email" placeholder ="john@gmail.com">
 
-	<div class="container">
-		<div class="card">
-			<div class="sneaker">
-				<div class="circle"></div>
-					<img src="../Main/cart.png" alt="logo">
-			</div>
-			<div class="info">
-				<h1 class ="title">Dear customer your order has been placed.</h1>
-				<br>
-				<h4><i>Thanks for shopping with us!<i><h4>
-				<a href="../Main/cart.html">
-				<div class="purchase">
-					<button>Go to Cart</button>
-				</div></a><br>
-			</div>
+                        <label for="telephone"><i class="fa-solid fa-mobile-screen-button"></i>Telephone</label>
+                        <input type="text" id="tp" name="tp" placeholder ="077-1231231">
+
+                        <label for="adr"><i class="fa-solid fa-location-dot"></i>Address</label>
+                        <input type="text" id="adr" name="address" placeholder ="home address">
+                       
+                     
+                	
+                        <div class="cart">
+                           
+                           <div class="rowc">
+                              <div class="col-50">
+                                
+                                 <input type="checkbox" checked="checked" name="sameadr">Shipping same as Billing
+                                 </label>
+								 
+                                 <div class="col-50">
+                                    <h3>Payment Method</h3>
+                                    <input type="radio" id="pmethod" name ="pmethod" value="creditcard"> Using credit cards
+                                    <input type="radio" id="pmethod" name ="pmethod" value="cash-ondelivery"> Cash on delivery
+                                    <div class="icon-container">
+                                       <!--<i class="fa-brands fa-cc-visa"></i>
+                                          <i class="fa-brands fa-cc-amex" style="color: blue;"></i>
+                                          <i class="fa-brands fa-cc-mastercard" style="color:red;"></i>
+                                          <i class="fa-brands fa-cc-discover" style="color:orange;"></i>
+                                          -->
+                                       <img src="visanew.png"  class="visalogo" width="250px"> 
+                                    </div>
+                                    <lable for="cname">Name of card</lable>
+                                    <input type="text" id="cname" name="cardname" >
+                                    <lable for="cnum">Card number</lable>
+                                    <input type="text" id="cnum" name="cardnumber" placeholder="xxxx-xxxx-xxxx-xxxx">
+                                    <lable for="expmonth">Expire month</lable>
+                                    <input type="text" id="expmonth" name="expmonth" placeholder="sep">
+                                    <div class="rowc">
+                                       <div class="col-50">
+                                          <lable for="expyear">Exp year</lable>
+                                          <input type="text" id="expyear" name="expyear" placeholder="2023">
+                                       </div>
+                                       <div class="col-50">
+                                          <lable for="cvv">CVV</lable>
+                                          <input type="text" id="cvv" name="cvv" placeholder="721">
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <input type="submit" value="Continue to checkout" class="btnc">
+                           </div>
+                        </div>
+                     </div>
+					</div>
+               </form>
+            </div>
+            </div>
+            <div class="col-25 cart">
+               <div class="containerc">
+                  <h4>Cart<span class="price" style="color:black"><i class="fa fa-shopping-cart"></i><b>2</b></span></h4>
+                  <p><a href="#">product 1</a><span class="price">$20</span></p>
+               </div>
+            </div>
+         </div>
 		</div>
-	</div>
-	
-	<a href="../Main/index.html">
-		<div class="sizes">
-			<button>Home</button>
-		</div>
-	</a>
-	
-	<script src="app.js"></script>
-</body>
+      </div>
+   </body>
 </html>
