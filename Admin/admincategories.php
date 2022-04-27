@@ -78,7 +78,7 @@
                                                 <!-- <a href="#" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:15px 32px; border-radius:15px;">Delete</a> -->
                                                 <form method="POST">
                                                     <input type="hidden" name="cate_id" value="<?= $item['category_id']; ?>">
-                                                    <button type="submit" name="delete_category_btn" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px; cursor:pointer;"> <a href="?id=<?php echo $item['category_id'];?>">Delete</a> </button>
+                                                    <button type="submit" name="delete_category_btn" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px; cursor:pointer;"> <a href="?id=<?php echo $item['category_id'];?>" style="color:white; text-decoration:none;">Delete</a> </button>
                                                 </form>
                                                 </td>
                                             </tr>
@@ -116,7 +116,7 @@
                                 title: 'Deleted',
 								text: 'Data deleted successfully!',
 								icon: 'success',
-								button: 'ok',
+								button: 'done',
                             });
                    </script>";
                     }

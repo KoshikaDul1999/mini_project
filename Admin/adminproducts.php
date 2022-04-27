@@ -8,6 +8,7 @@
         <title>Product Dashboard</title>
         <link rel="stylesheet" href="css/adminproducts.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
     <body>
 
@@ -83,7 +84,11 @@
                                             </td>
 
                                             <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">
-                                                <a href="#" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px;">Delete</a> 
+                                                <!-- <a href="#" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px;">Delete</a> -->
+                                                <form method="POST">
+                                                    <input type="hidden" name="pro_id" value="<?= $item['product_id']; ?>">
+                                                    <button type="submit" name="delete_product_btn" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px; cursor:pointer;"> <a style="color:white; text-decoration:none;" href="?id=<?php echo $item['product_id'];?>">Delete</a> </button>
+                                                </form>
                                             </td>
                                         </tr>
                                     <?php
@@ -101,5 +106,41 @@
             </div>
             </div>
         </div>
+
+        <!-- today -->
+        <?php
+                if(isset($_GET['id']))
+                {
+                    $products_id = $_GET['id'];
+
+                    $delete_query = "DELETE FROM product WHERE product_id='$products_id'";
+                    $delete_query_run = mysqli_query($con, $delete_query);
+
+                    if($delete_query_run)
+                    {
+                        echo "<script>
+                            swal({
+                                title: 'Deleted',
+								text: 'Data deleted successfully!',
+								icon: 'success',
+								button: 'done',
+                            });
+                   </script>";
+                    }
+                    else
+                    {
+                        echo "<script>
+                        swal({
+                            title: 'Error',
+                            text: 'something went wrong!',
+                            icon: 'warning',
+                            button: 'Ok',
+                        });
+                       </script>";
+                echo "Error:".mysqli_error($con);
+                    }
+                }
+            ?>
+
     </body>
 </html>
