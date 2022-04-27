@@ -119,7 +119,8 @@
 							 						<div class="col-md-3 price">
 							 							<span>$120</span>
 							 						</div>
-
+												
+													
 													
 														&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-update">Update</button>
 														
