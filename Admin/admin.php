@@ -27,12 +27,12 @@ if(isset($_POST['username'])){
 <html>
     <head>
         <title>Admin login</title>
-        <link rel="stylesheet" href="admin.css">
+        <link rel="stylesheet" href="css/admin.css">
     </head>
     <body>
         <div class="container">
-            <img src="admin.jpg">
-            <form method="POST" action="admindashboard.html">
+            <img src="images/admin.jpg">
+            <form method="POST" action="admindashboard.php">
                 <div class="form-input">
                     <input type="text" name="username" placeholder="User Name">
                 </div>

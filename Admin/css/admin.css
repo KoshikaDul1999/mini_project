@@ -1,6 +1,6 @@
 body{
     margin: 0 auto;
-    background-image: url(adminbg.webp);
+    background-image: url(../images/adminbg.webp);
     background-repeat: no-repeat;
     background-size: 100% 720px;
 }
@@ -33,6 +33,11 @@ input[type="text"],[type="password"]{
 .btn-login{
     padding: 15px 25px;
     border: none;
-    background-color: #27ae60;
+    background-color: rgb(65, 7, 3);
     color: #fff;
+    cursor: pointer;
 }
+
+.btn-login:hover {
+    background-color: #27ae60;
+  }

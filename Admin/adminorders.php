@@ -1,7 +1,11 @@
+<?php
+    include('connection.php');
+?>
+
 <html>
     <head>
-        <title>Customer Dashboard</title>
-        <link rel="stylesheet" href="admincustomers.css">
+        <title>Order Dashboard</title>
+        <link rel="stylesheet" href="css/adminorders.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     </head>
     <body>
@@ -25,14 +29,14 @@
         <!--sliderbar start-->
         <div class="sidebar">
             <center>
-                <img src="dashadmin.jpg" class="profile_image" alt="profile image">
+                <img src="images/dashadmin.jpg" class="profile_image" alt="profile image">
                 <h4>Admin</h4>
             </center>
-            <a href="admindashboard.html"><i class="fa fa-home"></i><span>Dashboard</span></a>
-            <a href="adminorders.html"><i class="fa fa-shopping-bag" aria-hidden="true"></i><span>Orders</span></a>
+            <a href="admindashboard.php"><i class="fa fa-home"></i><span>Dashboard</span></a>
+            <a class="active" href="#"><i class="fa fa-shopping-bag" aria-hidden="true"></i><span>Orders</span></a>
             <a href="adminproducts.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span>Products</span></a>
             <a href="admincategories.php"><i class="fa fa-list" aria-hidden="true"></i><span>Categories</span></a>
-            <a class="active" href="#"><i class="fa fa-users" aria-hidden="true"></i><span>Customers</span></a>
+            <a href="admincustomers.php"><i class="fa fa-users" aria-hidden="true"></i><span>Customers</span></a>
         </div>
         <!--slider bar end-->
         

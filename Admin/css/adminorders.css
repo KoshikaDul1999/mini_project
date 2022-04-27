@@ -126,7 +126,7 @@ label #sidebar_btn:hover{
 
 .content{
     margin-left: 250px;
-    background: url(adminbg1.jpg);
+    background: url(../images/adminbg1.jpg);
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -139,21 +139,5 @@ label #sidebar_btn:hover{
 
 #check{
     display: none;
-}
-
-.container .content .add-cate{
-    margin-top: 5rem;
-    padding: 15px 25px;
-    border: none;
-    background-color: #1d11fb;
-    color: #fff;
-    font-size: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.container .content input[type="submit"]:hover{
-			cursor: pointer;
-			background: #1bd5cf;
-			color: #000;
 }
 

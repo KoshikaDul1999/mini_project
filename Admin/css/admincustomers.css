@@ -39,7 +39,7 @@ header{
     transition-property: background;
 }
 
-.right_area .logout_btn:hover{
+.logout_btn:hover{
     background: #26e4be;
 }
 
@@ -124,14 +124,14 @@ label #sidebar_btn:hover{
     padding-top: 20px;
 }
 
-/*.content{
+.content{
     margin-left: 250px;
-    background: url(adminbg1.jpg);
+    background: url(../images/adminbg1.jpg);
     background-position: center;
     background-size: cover;
     height: 100vh;
     transition: 0.5s;
-}*/
+}
 
 #check:checked ~ .content{
     margin-left: 60px;
@@ -139,57 +139,5 @@ label #sidebar_btn:hover{
 
 #check{
     display: none;
-}
-
-/*today*/
-
-.container{
-    position: fixed;
-    right: 0;
-    top: 3rem;
-    width: 80vw;
-    height: 100vh;
-}
-
-.container .content{
-    margin-top: 10vh;
-    min-height: 90vh;
-    background: url(adminbg1.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    transition: 0.5s;
-}
-
-.container .content .cards{
-    padding: 20px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.container .content .cards .card{
-    width: 250px;
-    height: 150px;
-    background: #fff;
-    margin: 20px 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-}
-
-.container .content .cards .card .icon-design img{
-    width: 100px;
-    height: 120px;
-}
-
-.container .content .content-ii{
-    min-height: 60vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-wrap: wrap;
 }
 

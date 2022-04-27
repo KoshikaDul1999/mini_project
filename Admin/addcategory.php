@@ -1,6 +1,15 @@
+<?php
+	//session_start();
+    include ("connection.php");
+    //include ("myfunctions.php");
+?>
+
+
+
 <html>
     <head>
         <title>Add Category</title>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
     <style type="text/css">
 
@@ -8,7 +17,7 @@
 		{
 			margin: 0;
 			padding: 0;
-			background: url(addpro.jfif);
+			background: url(images/addpro.jfif);
 			background-size: cover;
 			height: 850px;
 			background-position: center;
@@ -89,12 +98,49 @@
                     <form action="#" method="POST">
                         <label for="">Name : </label><br>
                             <input type="text" required name="category_name" placeholder="Enter category name"><br><br>
-                        <label for="">Upload image : </label>
-                            <input type="file" required name="c_image"><br><br>
                         <label for="">Description : </label><br>
                             <textarea rows="6" required name="c_description" placeholder="Enter description"></textarea><br><br>
                         <input type="submit" value="Add category" name="add_category_btn">
                 </div>             
         </div>
+
+		<?php
+			if(isset($_POST['add_category_btn']))
+			{
+				$category_name = $_POST['category_name'];
+				$c_description = $_POST['c_description'];
+
+				$sql="INSERT INTO category(category_name,c_description) VALUES ('$category_name','$c_description')";
+
+				$res=mysqli_query($con,$sql);
+
+				if($res)
+				{
+					echo "<script>
+							swal({
+								title: 'Successfuly Added',
+								text: 'Data added successfully!',
+								icon: 'success',
+								button: 'Wow!',
+							});
+                   </script>";
+					//header('Location:admincategories.php');
+				}
+				else
+				{
+					echo "<script>
+							swal({
+								title: 'Error',
+								text: 'Data didnot add!',
+								icon: 'warning',
+								button: 'Ok',
+							});
+                   		</script>";
+					//echo "Error:".mysqli_error($con);
+				}
+
+			}
+?>
+
     </body>
 </html>
