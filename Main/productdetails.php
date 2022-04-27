@@ -11,7 +11,7 @@
 </head>
 <body>
 
-	<a href="../../Main/shoses.html">
+	<a href="../Main/index.php">
 		<div class="sizes1">
 			<button>Back</button>
 		</div>
@@ -39,9 +39,9 @@
 					<button class="active">42</button>
 					<button>44</button>
 				</div>
-				<a href="../cart/cart 1.html">
+				<a href="../main/cart.php">
 				<div class="purchase">
-					<button>Purchase</button>
+					<button>Add to Cart</button>
 				</div></a><br>
 			</div>
 		</div>
@@ -50,7 +50,7 @@
 		?>
 	</div>
 	
-	<a href="../../Main/index.html">
+	<a href="../Main/index.php">
 		<div class="sizes1">
 			<button>Home</button>
 		</div>

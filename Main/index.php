@@ -33,7 +33,7 @@
                      <li><a href="watches.html">Watches</a></li>
                      <li><a href="beauty.html">Beauty and Cosmetics</a></li>
                      <li><a href="cameras.html">Cameras</a></li>
-                     <a href="index.html" class="btn">Home</a>
+                     <a href="index.php" class="btn">Home</a>
                   </ul>
                </nav>
                <a href="cart.html">
