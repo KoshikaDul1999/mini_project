@@ -83,7 +83,7 @@
                                             </td>
 
                                             <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">
-                                                <a href="#" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px;">Delete</a>
+                                                <a href="#" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px;">Delete</a> 
                                             </td>
                                         </tr>
                                     <?php

@@ -1,3 +1,7 @@
+<?php
+    include('connection.php');
+?>
+
 <!DOCTYPE html>
 <html>
    <head>
@@ -97,38 +101,26 @@
       <div class="header">
          <h2>Newly arivels</h2>
          <div class="box1">
+             <?php
+                $sql="SELECT * FROM product LIMIT 4";
+                $res=mysqli_query($con,$sql);
+                $i=0;
+            
+                while($row=mysqli_fetch_assoc($res))
+                {
+             ?>
             <div class="product_column1">
-               <a href="../Shoses/pages/01.html">
-                  <img src="../Shoses/source/s1.png" width="300">
-                  <h4>Nike ZX<br>
-                     Rs.5000
+               <a href="productdetails.php?id=<?php echo $row['product_id'];?>">
+                  <img src="<?php echo "../Admin/uploads/".$row['p_image']?>" width="300">
+                  <h4><?php echo $row['product_name'];?><br>
+                  <?php echo $row['selling_price'];?>
                   </h4>
                </a>
             </div>
-            <div class="product_column2">
-               <a href="../Clothings/Pages/01.html">
-                  <img src="../Clothings/Sources/mens/01.png" width="300">
-                  <h4>Adidas Sports T-Shirt<br>
-                     Rs.2000
-                  </h4>
-               </a>
-            </div>
-            <div class="product_column3">
-               <a href="../Beauty/Pages/01.html">
-                  <img src="../Beauty/Sources/b1.png" width="300">
-                  <h4>Skin Care Packt<br>
-                     Rs.4500
-                  </h4>
-               </a>
-            </div>
-            <div class="product_column4">
-               <a href="../Watches/Pages/01.html">
-                  <img src="../Watches/Sources/w1.png" width="300">
-                  <h4>Apple Watch<br>
-                     Rs.5000
-                  </h4>
-               </a>
-            </div>
+            <?php
+            $i++;
+                }
+            ?>
          </div>
          <!------------------------------------------------------------------------------------------------------------------------->
          <div class="box2">
