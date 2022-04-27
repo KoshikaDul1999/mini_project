@@ -78,7 +78,7 @@
                                                 <!-- <a href="#" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:15px 32px; border-radius:15px;">Delete</a> -->
                                                 <form method="POST">
                                                     <input type="hidden" name="cate_id" value="<?= $item['category_id']; ?>">
-                                                    <button type="submit" name="delete_category_btn" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px; cursor:pointer;"> Delete </button>
+                                                    <button type="submit" name="delete_category_btn" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px; cursor:pointer;"> <a href="?id=<?php echo $item['category_id'];?>">Delete</a> </button>
                                                 </form>
                                                 </td>
                                             </tr>
@@ -102,11 +102,11 @@
         
             <!-- today -->
             <?php
-                if(isset($_POST['delete_category_btn']))
+                if(isset($_GET['id']))
                 {
-                    $categories_id = mysqli_real_escape_string($con, $_POST['cate_id']);
+                    $categories_id = $_GET['id'];
 
-                    $delete_query = "DELETE FROM category WHERE id='$categories_id'";
+                    $delete_query = "DELETE FROM category WHERE category_id='$categories_id'";
                     $delete_query_run = mysqli_query($con, $delete_query);
 
                     if($delete_query_run)

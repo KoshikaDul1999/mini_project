@@ -124,108 +124,73 @@
          </div>
          <!------------------------------------------------------------------------------------------------------------------------->
          <div class="box2">
+         <?php
+                $sql="SELECT * FROM product WHERE category_id='24'";
+                $res=mysqli_query($con,$sql);
+                $i=0;
+            
+                while($row=mysqli_fetch_assoc($res))
+                {
+             ?>
             <div class="product_column1">
-               <a href="../Beauty/Pages/06.html">
-                  <img src="../Beauty/Sources/b6.png" width="300">
-                  <h4>Firming green tea body cream<br>
-                     Rs.1800
+               <a href="productdetails.php?id=<?php echo $row['product_id'];?>">
+                  <img src="<?php echo "../Admin/uploads/".$row['p_image']?>" width="300">
+                  <h4><?php echo $row['product_name'];?><br>
+                  <?php echo $row['selling_price'];?>
                   </h4>
                </a>
             </div>
-            <div class="product_column2">
-               <a href="../Electronics/Pages/03.html">
-                  <img src="../Electronics/Sources/e3.png" width="300">
-                  <h4>Sony Headset<br>
-                     Rs.8000
-                  </h4>
-               </a>
-            </div>
-            <div class="product_column3">
-               <a href="../Shoses/pages/04.html">
-                  <img src="../Shoses/source/s3.png" width="300">
-                  <h4>Nike Metcon 5<br>
-                     Rs.15000
-                  </h4>
-               </a>
-            </div>
-            <div class="product_column4">
-               <a href="../Electronics/Pages/12.html">
-                  <img src="../Electronics/Sources/e12.png" width="300">
-                  <h4>Mavic Air 2<br>
-                     Rs.90000
-                  </h4>
-               </a>
-            </div>
+            <?php
+            $i++;
+                }
+            ?>
          </div>
          <!------------------------------------------------------------------------------------------------------------->
          <div class="box2">
+         <?php
+                $sql="SELECT * FROM product WHERE category_id='13'";
+                $res=mysqli_query($con,$sql);
+                $i=0;
+            
+                while($row=mysqli_fetch_assoc($res))
+                {
+             ?>
             <div class="product_column1">
-               <a href="../Electronics/Pages/09.html">
-                  <img src="../Electronics/Sources/e9.png" width="300">
-                  <h4>Samsung Galaxy S7 edge<br>
-                     Rs.40000
+               <a href="productdetails.php?id=<?php echo $row['product_id'];?>">
+                  <img src="<?php echo "../Admin/uploads/".$row['p_image']?>" width="300">
+                  <h4><?php echo $row['product_name'];?><br>
+                  <?php echo $row['selling_price'];?>
                   </h4>
                </a>
             </div>
-            <div class="product_column2">
-               <a href="../Clothings/Pages2/09.html">
-                  <img src="../Clothings/Sources/womens/f9.png" width="300">
-                  <h4>Floral Women cocktail<br>
-                     Rs.2800
-                  </h4>
-               </a>
-            </div>
-            <div class="product_column3">
-               <a href="../Beauty/Pages/07.html">
-                  <img src="../Beauty/Sources/b8.png" width="300">
-                  <h4>Night face cream<br>
-                     Rs.2300
-                  </h4>
-               </a>
-            </div>
-            <div class="product_column4">
-               <a href="../Cameras/Pages/10.html">
-                  <img src="../Cameras/Sources/c10.png" width="300">
-                  <h4>Axis Gimbal<br>
-                     Rs.60000
-                  </h4>
-               </a>
-            </div>
+            <?php
+            $i++;
+                }
+            ?>
+            
          </div>
          <!------------------------------------------------------------------------------------------------------------->
          <div class="box2">
-            <div class="product_column4">
-               <a href="../Cameras/Pages/01.html">
-                  <img src="../Cameras/Sources/c1.png" width="300">
-                  <h4>Canon Digital SLR<br>
-                     Rs.80000
-                  </h4>
-               </a>
-            </div>
-            <div class="product_column3">
-               <a href="../Beauty/Pages/05.html">
-                  <img src="../Beauty/Sources/b5.png" width="300">
-                  <h4>Face cream<br>
-                     Rs.1300
-                  </h4>
-               </a>
-            </div>
-            <div class="product_column2">
-               <a href="../Clothings/Pages/02.html">
-                  <img src="../Clothings/Sources/mens/02.png" width="300">
-                  <h4>Classic T-Shirt<br>
-                     Rs.850
-                  </h4>
-               </a>
-            </div>
+         <?php
+                $sql="SELECT * FROM product WHERE category_id='14'";
+                $res=mysqli_query($con,$sql);
+                $i=0;
+            
+                while($row=mysqli_fetch_assoc($res))
+                {
+             ?>
             <div class="product_column1">
-               <a href="../Electronics/Pages/04.html">
-                  <img src="../Electronics/Sources/e4.png" width="300">
-                  <h4>HP Computer<br>
-                     Rs.32000
+               <a href="productdetails.php?id=<?php echo $row['product_id'];?>">
+                  <img src="<?php echo "../Admin/uploads/".$row['p_image']?>" width="300">
+                  <h4><?php echo $row['product_name'];?><br>
+                  <?php echo $row['selling_price'];?>
                   </h4>
                </a>
             </div>
+            <?php
+            $i++;
+                }
+            ?>
          </div>
       </div>
       <!------------------------------------------------------------------------------------------------------------->

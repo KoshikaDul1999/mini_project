@@ -34,10 +34,7 @@
 				<h1 class ="title"><?php echo $row['product_name'];?></h1>
 				<h3><?php echo $row['p_description'];?></h3>
 				<div class="sizes">
-					<button>39</button>
-					<button>40</button>
-					<button class="active">42</button>
-					<button>44</button>
+				<?php echo "Rs.". $row['selling_price'];?>
 				</div>
 				<a href="../main/cart.php">
 				<div class="purchase">
