@@ -109,7 +109,7 @@
                            <div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
                            <div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
                            <div class="summary-item"><span class="text">Total</span><span class="price"><?php if($tot>0){echo $tot;} ?></span></div>
-                           <button type="button" class="btn btn-primary btn-lg btn-block"><a href="purchase.html"> Checkout</button></a>
+                           <button type="button" class="btn btn-primary btn-lg btn-block"><a href="purchase.php"> Checkout</button></a>
                         </div>
                      </div>
                   </div>

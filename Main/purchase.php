@@ -2,6 +2,26 @@
 
 <?php
     include ("connection.php");
+
+    if(isset($_POST['checkout'])){
+        $name=$_POST['firstname'];
+        $email=$_POST['email'];
+        $phone=$_POST['tp'];
+        $address=$_POST['address'];
+        $paymethod=$_POST['pmethod'];
+
+    $sql="INSERT INTO orderdetails(name,email,phone,address,paymentmethod) VALUES('$name','$email','$phone','$address','$paymethod')";
+    $res=mysqli_query($con,$sql);
+    if($res){
+        echo "<script>
+            alert('Purchase success');
+            window.location.href = 'thankyou.php';
+        </script>";
+    }else{
+        echo mysqli_error($con);
+    }
+
+    }
 ?>
 
 <html>
@@ -10,6 +30,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>checkout page</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
       <link rel="stylesheet" href="../checkout/checkout.css">
    </head>
    <body>
@@ -75,7 +97,7 @@
                                     </div>
                                  </div>
                               </div>
-                              <input type="submit" name="ckeckbtn" value="Continue to checkout" class="btnc">
+                              <input type="submit" name="checkout" value="Continue to checkout" class="btnc">
                            </div>
                         </div>
                      </div>
@@ -84,77 +106,75 @@
             </div>
             </div>
             <div class="col-25 cart">
-               <div class="containerc">
-                  <h4>Cart<span class="price" style="color:black"><i class="fa fa-shopping-cart"></i><b>2</b></span></h4>
-                  <p><a href="#">product 1</a><span class="price">$20</span></p>
+            <div class="content">
+                  <div class="row">
+                     <div class="col-md-12 col-lg-8">
+                        <div class="items">
+							<?php
+                      $tot=0;
+								$sql="SELECT product.product_id,product.p_image,cart.product_id,cart.p_name,cart.unit_price,cart.qty FROM cart,product WHERE product.product_id=cart.product_id";
+								$res=mysqli_query($con,$sql);
+                        $i=0;
+                        
+								while($row=mysqli_fetch_assoc($res)){
+							?>
+                           <div class="product">
+                              <div class="row">
+                                 <div class="col-md-3">
+                                    <img class="img-fluid mx-auto d-block image" src="<?php echo "../Admin/uploads/".$row['p_image']?>">
+                                 </div>
+                                 <div class="col-md-8">
+                                    <div class="info">
+                                       <div class="row">
+                                          <div class="col-md-5 product-name">
+                                             <div class="product-name">
+                                                <a href="#"><?php echo $row['p_name']?></a>
+                                                <div class="product-info">
+                                                   
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="col-md-4 quantity">
+                                             <label for="quantity">Quantity:</label>
+                                             <!----<form method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>">-->
+                                             <input id="quantity" type="number" value ="<?php echo $row['qty']?>" name="qty"class="form-control quantity-input">
+                                          </div>
+                                          <div class="col-md-3 price">
+                                             <span><?php echo $row['unit_price']?></span>
+                                          </div>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-update">Update</button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+						   <?php 
+                  }
+                  $sql="SELECT SUM(cart.unit_price) AS tot FROM cart;";
+                  $res=mysqli_query($con,$sql);
+                  $row=mysqli_fetch_row($res);
+                  $tot=$row[0];
+                     ?>
+                        </div>
+                     </div>
+                     <div class="col-md-12 col-lg-4">
+                        <div class="summary">
+                           <h3>Summary</h3>
+                           <div class="summary-item"><span class="text">Subtotal</span><span class="price"><?php if($tot>0){echo $tot;} ?></span></div>
+                           <div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
+                           <div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
+                           <div class="summary-item"><span class="text">Total</span><span class="price"><?php if($tot>0){echo $tot;} ?></span></div>
+                           <button type="button" class="btn btn-primary btn-lg btn-block"><a href="purchase.html"> Checkout</button></a>
+                        </div>
+                     </div>
+                  </div>
                </div>
-            </div>
+</div>
          </div>
 		</div>
       </div>
 
-      <?php
     
-    if(isset($_POST['checkbtn']))
-    {
-        $cat_id='';
-
-       // $dir="uploads/";
-        //$filename=basename($_FILES["file"]["name"]);
-       // $filepath=$dir.$filename;
-       // $filetype=pathinfo($filepath,PATHINFO_EXTENSION);
-
-        $filename=$_FILES['file']['name'];
-        $cat_id=$_POST['cat_id'];
-        $imageFileType=strtolower(pathinfo($filename,PATHINFO_EXTENSION));
-        $extensions_arr = array("jpg","jpeg","png","gif");
-        $product_name = $_POST['product_name'];
-        $p_brand = $_POST['p_brand'];
-        $p_color = $_POST['p_color'];
-        $original_price = $_POST['original_price'];
-        $selling_price = $_POST['selling_price'];
-        $p_description = $_POST['p_description'];
-        $p_qty = $_POST['p_qty'];
-       
-        if(in_array($imageFileType,$extensions_arr)){
-
-            if(move_uploaded_file($_FILES["file"]["tmp_name"],'uploads/'.$filename)){
-                $sql="INSERT INTO `product` (`category_id`, `product_name`, `p_brand`, `p_color`, `orginal_price`, `selling_price`, `p_description`, `p_image`, `p_qty`)
-                VALUES ('$cat_id', '$product_name', '$p_brand', '$p_color', '$original_price', '$selling_price', '$p_description', '$filename', '$p_qty')";
-
-                if(mysqli_query($con,$sql)){
-                   echo "<script>
-                            swal({
-                                title: 'Successfuly Added',
-								text: 'Data added successfully!',
-								icon: 'success',
-								button: 'Wow!',
-                            });
-                   </script>";
-                   //echo '<script language="javascript">window.location.href="addproduct.php"</script>'; 
-                }else{
-                    echo "<script>
-							swal({
-								title: 'Error',
-								text: 'Data didnot add!',
-								icon: 'warning',
-								button: 'Ok',
-							});
-                   		</script>";
-                    echo "Error:".mysqli_error($con);
-                }
-            }else{
-                echo 'Error in uploading file - '.$_FILES['file']['name'].'';
-            }
-        }
-
-        
-    }
-?>
-
-
-
-
 
 
 
