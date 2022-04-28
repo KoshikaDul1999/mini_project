@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 27, 2022 at 09:31 AM
+-- Generation Time: Apr 28, 2022 at 08:35 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -54,20 +54,20 @@ CREATE TABLE IF NOT EXISTS `category` (
   `category_name` varchar(100) NOT NULL,
   `c_description` varchar(300) NOT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`category_id`, `category_name`, `c_description`) VALUES
-(13, 'cameras', 'All kind of cameras'),
 (12, 'Electronics', 'Electronic items'),
 (14, 'Beauty and cosmetics', 'Beauty & cosmetic items'),
 (15, 'Watches', 'branded watches'),
 (16, 'Shoes', 'Branded shoes'),
 (24, 'Men clothing', 'Branded'),
-(23, 'Women clothing', 'Branded ');
+(23, 'Women clothing', 'Branded '),
+(26, 'cameras', 'All type of cameras');
 
 -- --------------------------------------------------------
 
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `p_image` varchar(250) NOT NULL,
   `p_qty` int(20) NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=203 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=205 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product`
@@ -179,6 +179,33 @@ INSERT INTO `product` (`product_id`, `category_id`, `product_name`, `p_brand`, `
 (200, 16, 'Nike Kyrie Shoes', 'nike', 'gray and green', 7000, 8000, 'A new Flex Groove delivers excellent flexibility and traction to help you find your groove.', 's9.png', 100),
 (201, 16, 'AU Training Shoes', 'Au', 'black & white', 4000, 5000, 'These shoes were built for athletes who amp up their training with higher intensity bursts of activity and cardio. ', 's10.png', 100),
 (202, 16, 'Brooks Ghost 12', 'brook', 'red, blue and white', 7000, 8000, 'More important thing is finding the right running shoe to avoid injury and up your fitness.', 's11.png', 100);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `fname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `mail` varchar(50) NOT NULL,
+  `pwd` varchar(50) NOT NULL,
+  `telephone` int(11) NOT NULL,
+  `country` varchar(30) NOT NULL,
+  PRIMARY KEY (`mail`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`fname`, `lname`, `address`, `mail`, `pwd`, `telephone`, `country`) VALUES
+('Charu', 'Himesh', 'Kalutara', 'charu@gmail.com', '4586', 789546185, 'Sri Lanka'),
+('kasun', 'sadaru', 'matara', 'kasun@gmail.com', '123', 412298465, 'Sri Lanka'),
+('nimesha', 'sewwandi', 'matara', 'nimesha@gmail.com', '1234', 715605010, 'Sri Lanka');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

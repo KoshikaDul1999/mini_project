@@ -36,7 +36,7 @@
 				<div class="sizes">
 				<?php echo "Rs.". $row['selling_price'];?>
 				</div>
-				<a href="../main/cart.php">
+				<a href="../main/cart.php?id=<?php echo $product_id;?>&name=<?php echo $row['product_name'];?>&price=<?php echo $row['selling_price'];?>&qty=<?php echo 1;?>">
 				<div class="purchase">
 					<button>Add to Cart</button>
 				</div></a><br>
