@@ -13,6 +13,7 @@
    		if($res){
    			echo "<script>
    				alert('product added');
+               window.location.href = 'cart.php';
    			</script>";
    		}else{
    			echo mysqli_error($con);
@@ -35,11 +36,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"">
       <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
       <link rel="stylesheet" href="../cart/assets/css/style.css">
-	  <script>
-  if ( window.history.replaceState ) {
-  window.history.replaceState( null, null, window.location.href );
-}
-</script>
+	 
    </head>
    <body>
      
@@ -59,8 +56,11 @@
                      <div class="col-md-12 col-lg-8">
                         <div class="items">
 							<?php
+                      $tot=0;
 								$sql="SELECT product.product_id,product.p_image,cart.product_id,cart.p_name,cart.unit_price,cart.qty FROM cart,product WHERE product.product_id=cart.product_id";
 								$res=mysqli_query($con,$sql);
+                        $i=0;
+                        
 								while($row=mysqli_fetch_assoc($res)){
 							?>
                            <div class="product">
@@ -93,16 +93,22 @@
                                  </div>
                               </div>
                            </div>
-						   <?php }?>
+						   <?php 
+                  }
+                  $sql="SELECT SUM(cart.unit_price) AS tot FROM cart;";
+                  $res=mysqli_query($con,$sql);
+                  $row=mysqli_fetch_row($res);
+                  $tot=$row[0];
+                     ?>
                         </div>
                      </div>
                      <div class="col-md-12 col-lg-4">
                         <div class="summary">
                            <h3>Summary</h3>
-                           <div class="summary-item"><span class="text">Subtotal</span><span class="price">$360</span></div>
+                           <div class="summary-item"><span class="text">Subtotal</span><span class="price"><?php if($tot>0){echo $tot;} ?></span></div>
                            <div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
                            <div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
-                           <div class="summary-item"><span class="text">Total</span><span class="price">$360</span></div>
+                           <div class="summary-item"><span class="text">Total</span><span class="price"><?php if($tot>0){echo $tot;} ?></span></div>
                            <button type="button" class="btn btn-primary btn-lg btn-block"><a href="purchase.html"> Checkout</button></a>
                         </div>
                      </div>
@@ -115,5 +121,9 @@
    </body>
    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-   </body>
+   <script>
+  if ( window.history.replaceState ) {
+  window.history.replaceState( null, null, window.location.href );
+}
+</script>
 </html>
