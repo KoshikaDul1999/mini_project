@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 27, 2022 at 07:09 AM
+-- Generation Time: Apr 28, 2022 at 06:29 AM
 -- Server version: 8.0.23
 -- PHP Version: 7.4.26
 
@@ -37,14 +37,16 @@ CREATE TABLE IF NOT EXISTS `user` (
   `telephone` int NOT NULL,
   `country` varchar(30) NOT NULL,
   PRIMARY KEY (`mail`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`fname`, `lname`, `address`, `mail`, `pwd`, `telephone`, `country`) VALUES
+('Charu', 'Himesh', 'Kalutara', 'charu@gmail.com', '4586', 789546185, 'Sri Lanka'),
 ('Hirushi', '', 'Galle', 'hiru99@gmail.com', '456', 776779981, 'Sri Lanka'),
+('kasun', 'sadaru', 'matara', 'kasun@gmail.com', '123', 412298465, 'Sri Lanka'),
 ('nimesha', 'sewwandi', 'matara', 'nimesha@gmail.com', '1234', 715605010, 'Sri Lanka'),
 ('sarindu', 'kelum', 'colombo', 'sarindu@gmail.com', '7891', 704586132, 'Sri Lanka');
 COMMIT;

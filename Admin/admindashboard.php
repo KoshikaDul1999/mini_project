@@ -55,7 +55,14 @@
                     
                         <div class="card">
                             <div class="box">
-                                <h1>0</h1>
+                                <?php
+                                        $query = "SELECT product_id FROM product ORDER BY product_id";
+                                        $query_run = mysqli_query($con, $query);
+
+                                        $row = mysqli_num_rows($query_run);
+
+                                        echo '<h1>'.$row.'</h1>'
+                                ?>
                                 <h3>Products</h3>
                             </div>
                             <div class="icon-design">
@@ -65,7 +72,15 @@
                         
                             <div class="card">
                                 <div class="box">
-                                    <h1>0</h1>
+                                    <?php
+                                        $query = "SELECT category_id FROM category ORDER BY category_id";
+                                        $query_run = mysqli_query($con, $query);
+
+                                        $row = mysqli_num_rows($query_run);
+
+                                        echo '<h1>'.$row.'</h1>'
+                                    ?>
+                                   
                                     <h3>Categories</h3>
                                 </div>
                                 <div class="icon-design">
@@ -75,7 +90,16 @@
                             
                                 <div class="card">
                                     <div class="box">
-                                        <h1>0</h1>
+
+                                    <?php
+                                        $query = "SELECT mail FROM user ORDER BY mail";
+                                        $query_run = mysqli_query($con, $query);
+
+                                        $row = mysqli_num_rows($query_run);
+
+                                        echo '<h1>'.$row.'</h1>'
+                                    ?>
+
                                         <h3>Customers</h3>
                                     </div>
                                     <div class="icon-design">

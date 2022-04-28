@@ -2,7 +2,7 @@
 
 $host="localhost";
 $user="root";
-$password="1234";
+$password="";
 $dbname="ecom";
 
 $con=mysqli_connect($host,$user,$password,$dbname);

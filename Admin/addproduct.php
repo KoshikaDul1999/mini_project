@@ -169,7 +169,8 @@
                             });
                    </script>";
                    //echo '<script language="javascript">window.location.href="addproduct.php"</script>'; 
-                }else{
+                }
+                else{
                     echo "<script>
 							swal({
 								title: 'Error',
@@ -183,9 +184,7 @@
             }else{
                 echo 'Error in uploading file - '.$_FILES['file']['name'].'';
             }
-        }
-
-        
+        }     
     }
 ?>
 
