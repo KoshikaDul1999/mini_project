@@ -1,5 +1,6 @@
 <?php
     include('connection.php');
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +15,7 @@
       <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
    </head>
    <body>
+   
       <div class="header">
          <center>
             <h1><i>haay.lk</i></h1>
@@ -36,7 +38,7 @@
                      <a href="index.php" class="btn">Home</a>
                   </ul>
                </nav>
-               <a href="cart.html">
+               <a href="cart.php">
                <img src="cart.png" alt="cart.png" width="40px"></a>
             </div>
             <div class="row mainSlider">

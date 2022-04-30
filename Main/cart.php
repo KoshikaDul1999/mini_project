@@ -1,7 +1,6 @@
-<?php
-   include('connection.php');
-   
-   	if(isset($_GET['id']) && isset($_GET['name']) && isset($_GET['price']) && isset($_GET['qty'])){
+<?php 
+session_start(); 
+   	/**if(isset($_GET['id']) && isset($_GET['name']) && isset($_GET['price']) && isset($_GET['qty'])){
    		$pid=$_GET['id'];
    		$name=$_GET['name'];
    		$price=$_GET['price'];
@@ -19,7 +18,7 @@
    			echo mysqli_error($con);
    		}
    
-   	}
+   	} */
    
    ?>
 <!DOCTYPE html>
@@ -56,24 +55,23 @@
                      <div class="col-md-12 col-lg-8">
                         <div class="items">
 							<?php
-                      $tot=0;
-								$sql="SELECT product.product_id,product.p_image,cart.product_id,cart.p_name,cart.unit_price,cart.qty FROM cart,product WHERE product.product_id=cart.product_id";
-								$res=mysqli_query($con,$sql);
-                        $i=0;
+                     $tot=0;
+                      if(isset($_SESSION['cart'])){
+                         foreach($_SESSION['cart'] as $key=>$value){
                         
-								while($row=mysqli_fetch_assoc($res)){
+                           $tot=$tot+$value['p_price'];
 							?>
                            <div class="product">
                               <div class="row">
                                  <div class="col-md-3">
-                                    <img class="img-fluid mx-auto d-block image" src="<?php echo "../Admin/uploads/".$row['p_image']?>">
+                                    <img class="img-fluid mx-auto d-block image" src="<?php echo "../Admin/uploads/".$value['p_img']?>">
                                  </div>
                                  <div class="col-md-8">
                                     <div class="info">
                                        <div class="row">
                                           <div class="col-md-5 product-name">
                                              <div class="product-name">
-                                                <a href="#"><?php echo $row['p_name']?></a>
+                                                <a href="#"><?php echo $value['p_name']?></a>
                                                 <div class="product-info">
                                                    
                                                 </div>
@@ -82,23 +80,26 @@
                                           <div class="col-md-4 quantity">
                                              <label for="quantity">Quantity:</label>
                                              <!----<form method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>">-->
-                                             <input id="quantity" type="number" value ="<?php echo $row['qty']?>" name="qty"class="form-control quantity-input">
+                                          <td><input type="number" class="iquantity" onchange='subtotal()' min='1' max='100' value ="<?php echo $value['p_qty']?>"></td>
                                           </div>
                                           <div class="col-md-3 price">
-                                             <span><?php echo $row['unit_price']?></span>
+                                             <td ><?php echo $value['p_price']?><input type="hidden" class="iprice" value="<?php echo $value['p_price']?>"></td>
                                           </div>
-                                          &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-update">Update</button>
+
+                                             <form action="manage_cart.php" method="POST">
+                                             &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-update">Update</button>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-update" name="remove">Remove</button>
+                                          <input type="hidden" name="p_id" value="<?php echo $value['p_id'];?>">
+                                             </form>
                                        </div>
                                     </div>
                                  </div>
                               </div>
                            </div>
 						   <?php 
-                  }
-                  $sql="SELECT SUM(cart.unit_price) AS tot FROM cart;";
-                  $res=mysqli_query($con,$sql);
-                  $row=mysqli_fetch_row($res);
-                  $tot=$row[0];
+                   }
+                      }
+                        
                      ?>
                         </div>
                      </div>
@@ -122,8 +123,16 @@
    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
    <script>
-  if ( window.history.replaceState ) {
-  window.history.replaceState( null, null, window.location.href );
-}
+      var price=document.getElementsByClassName('iprice');
+      var qty=document.getElementsByClassName('iquantity');
+      var tot=document.getElementsByClassName('tot');
+
+      function subtotal(){ 
+         for(i=0;i<price.length;i++)
+         {
+               tot[i].innerText=(price[i].value)*(qty[i].value);
+         }
+      }
+      subtotal();
 </script>
 </html>

@@ -18,6 +18,7 @@
 	</a>
 	
 	<div class="container">
+		<form action="manage_cart.php" method="POST">
 		<?php
 			if(isset($_GET['id'])){
 				$product_id=$_GET['id'];
@@ -38,13 +39,18 @@
 				</div>
 				<a href="../main/cart.php?id=<?php echo $product_id;?>&name=<?php echo $row['product_name'];?>&price=<?php echo $row['selling_price'];?>&qty=<?php echo 1;?>">
 				<div class="purchase">
-					<button>Add to Cart</button>
+					<button type="submit" name="addcart">Add to Cart</button>
 				</div></a><br>
+				<input type="hidden" name="p_id" value="<?php echo $product_id;?>">
+				<input type="hidden" name="p_name" value="<?php echo $row['product_name'];?>">
+				<input type="hidden" name="p_price" value="<?php echo $row['selling_price'];?>">
+				<input type="hidden" name="p_img" value="<?php echo $row['p_image'];?>">
 			</div>
 		</div>
 		<?php
 			}
 		?>
+		</form>
 	</div>
 	
 	<a href="../Main/index.php">
