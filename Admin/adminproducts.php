@@ -113,11 +113,22 @@
                 {
                     $products_id = $_GET['id'];
 
+                    $product_query = "SELECT * FROM product WHERE product_id='$products_id'";
+                    $product_query_run = mysqli_query($con, $product_query);
+
                     $delete_query = "DELETE FROM product WHERE product_id='$products_id'";
                     $delete_query_run = mysqli_query($con, $delete_query);
 
+                    $product_data = mysqli_fetch_array($product_query_run);
+                    $image = $product_data['p_image'];
+
                     if($delete_query_run)
                     {
+                        if(file_exists("uploads/".$image))
+                        {
+                            unlink("uploads/".$image);
+                        }
+
                         echo "<script>
                             swal({
                                 title: 'Deleted',

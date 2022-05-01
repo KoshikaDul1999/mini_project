@@ -6,9 +6,12 @@
 <html>
     <head>
         <title>Category Dashboard</title>
-        <link rel="stylesheet" href="css/admincategories.css">
+        <!-- <link rel="stylesheet" href="css/admincategories.css"> -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <script src="js/jquery-3.6.0.min.js"></script>
+        
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="js/custom.js"></script>
     </head>
     <body>
 
@@ -50,7 +53,7 @@
                     <div class="card-header">
                         <h4 style="color:rgb(247, 8, 84); font-size:40px; font-style:arial;"><center>Categories</center></h4>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" id="cate_table">
                         <table class="table table-bordered" style="margin-left:auto; margin-right:auto; align-content:center; margin-top:100px; ">
                             <thead>
                                 <tr>
@@ -76,10 +79,10 @@
 
                                                 <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">
                                                 <!-- <a href="#" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:15px 32px; border-radius:15px;">Delete</a> -->
-                                                <form method="POST">
-                                                    <input type="hidden" name="cate_id" value="<?= $item['category_id']; ?>">
-                                                    <button type="submit" name="delete_category_btn" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px; cursor:pointer;"> <a href="?id=<?php echo $item['category_id'];?>" style="color:white; text-decoration:none;">Delete</a> </button>
-                                                </form>
+                                               
+                                                   
+                                                    <button type="submit" name="delete_category_btn" class="delete_category_btn" value="<?= $item['category_id'];?> " style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px; cursor:pointer;"> <!-- <a href="?id=<?php //echo $item['category_id'];?>" style="color:white; text-decoration:none;"> --> Delete  <!-- </a> --> </button>
+                                                
                                                 </td>
                                             </tr>
                                         <?php
@@ -102,35 +105,43 @@
         
             <!-- today -->
             <?php
-                if(isset($_GET['id']))
+                if(isset($_POST['delete_category_btn']))
                 {
-                    $categories_id = $_GET['id'];
+                    $categories_id = mysqli_real_escape_string($con, $_POST['category_id']);
+                    //$categories_id = $_GET['id'];
 
                     $delete_query = "DELETE FROM category WHERE category_id='$categories_id'";
+                    
                     $delete_query_run = mysqli_query($con, $delete_query);
+
+                    echo "Error:".mysqli_error($con);
 
                     if($delete_query_run)
                     {
-                        echo "<script>
+                        /*echo "<script>
                             swal({
                                 title: 'Deleted',
 								text: 'Data deleted successfully!',
 								icon: 'success',
 								button: 'done',
                             });
-                   </script>";
+                   </script>";*/
+
+                            echo 200;
                     }
                     else
                     {
-                        echo "<script>
+                        /*echo "<script>
                         swal({
                             title: 'Error',
                             text: 'something went wrong!',
                             icon: 'warning',
                             button: 'Ok',
                         });
-                       </script>";
-                echo "Error:".mysqli_error($con);
+                       </script>";*/
+
+                       echo 500;
+                        echo "Error:".mysqli_error($con);
                     }
                 }
             ?>
