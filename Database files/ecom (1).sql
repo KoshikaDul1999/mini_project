@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 28, 2022 at 09:58 PM
--- Server version: 5.7.31
--- PHP Version: 7.3.21
+-- Generation Time: May 02, 2022 at 04:57 AM
+-- Server version: 5.7.36
+-- PHP Version: 7.4.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`cart_id`,`product_id`),
   UNIQUE KEY `cart_id` (`cart_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `cart`
@@ -67,7 +67,8 @@ CREATE TABLE IF NOT EXISTS `cart` (
 
 INSERT INTO `cart` (`cart_id`, `product_id`, `p_name`, `unit_price`, `qty`, `total_product_price`, `time`) VALUES
 (26, 174, 'Cotton T-Shirt', 2800, 1, NULL, '2022-04-28 21:44:42'),
-(27, 129, 'Camera Backpack', 10000, 1, NULL, '2022-04-28 21:48:30');
+(27, 129, 'Camera Backpack', 10000, 1, NULL, '2022-04-28 21:48:30'),
+(28, 196, 'Nike Air Max Verona', 8000, 1, NULL, '2022-04-29 09:32:11');
 
 -- --------------------------------------------------------
 
@@ -88,7 +89,6 @@ CREATE TABLE IF NOT EXISTS `category` (
 --
 
 INSERT INTO `category` (`category_id`, `category_name`, `c_description`) VALUES
-(30, 'aswed', 'sdfrgthh'),
 (12, 'Electronics', 'Electronic items'),
 (14, 'Beauty and cosmetics', 'Beauty & cosmetic items'),
 (15, 'Watches', 'branded watches'),
@@ -144,11 +144,9 @@ CREATE TABLE IF NOT EXISTS `orders` (
 --
 
 INSERT INTO `orders` (`cart_id`, `product_id`, `p_name`, `unit_price`, `qty`, `total_product_price`) VALUES
-(21, 196, 'Nike Air Max Verona', 8000, 1, NULL),
 (22, 191, 'Nike ZX', 5000, 1, NULL),
 (23, 191, 'Nike ZX', 5000, 1, NULL),
-(24, 176, 'Cotton T-Shirt', 1000, 1, NULL),
-(25, 141, 'Makeup set', 5000, 1, NULL);
+(24, 176, 'Cotton T-Shirt', 1000, 1, NULL);
 
 -- --------------------------------------------------------
 

@@ -8,6 +8,7 @@
         <title>Order Dashboard</title>
         <link rel="stylesheet" href="css/adminorders.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     </head>
     <body>
 
@@ -54,15 +55,10 @@
                         <table class="table table-bordered" style="margin-left:auto; margin-right:auto; align-content:center; margin-top:100px; ">
                             <thead>
                                 <tr>
-                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Order ID</th>
+                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Cart ID</th>
+                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Product ID</th>
                                     <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Product name</th>
-                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Product price</th>
-                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">User id</th>
-                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Shipping name</th>
-                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">E-mail</th>
-                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Mobile</th>
-                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Order address</th>
-                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Payment type</th>
+                                    <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Unit price</th>
                                     <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Quantity</th>
                                     <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Total</th>
                                     <th style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">Delete</th>
@@ -70,31 +66,25 @@
                             </thead>
                             <tbody>
                                 <?php
-                                    $categories = getAll("category");
+                                    $orders = getAll("orders");
 
-                                    if(mysqli_num_rows($categories) > 0)
+                                    if(mysqli_num_rows($orders) > 0)
                                     {
-                                        foreach($categories as $item)
+                                        foreach($orders as $item)
                                         {
                                             ?>
                                             <tr>
-                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['o_id']; ?></td>
-                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['o_product_name']; ?></td>
-                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['o_product_price']; ?></td>
-                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['o_usr_id']; ?></td>
-                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['o_shipping_name']; ?></td>
-                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['c_description']; ?></td>
-                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['c_description']; ?></td>
-                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['c_description']; ?></td>
-                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['c_description']; ?></td>
-                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['c_description']; ?></td>
-                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['c_description']; ?></td>
+                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['cart_id']; ?></td>
+                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['product_id']; ?></td>
+                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['p_name']; ?></td>
+                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['unit_price']; ?></td>
+                                                <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;"> <?= $item['qty']; ?></td>
 
                                                 <td style="padding-top:10px; padding-bottom:10px; padding-left:15px; padding:20px;">
                                                 <!-- <a href="#" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:15px 32px; border-radius:15px;">Delete</a> -->
                                                 <form method="POST">
-                                                    <input type="hidden" name="cate_id" value="<?= $item['category_id']; ?>">
-                                                    <button type="submit" name="delete_category_btn" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px; cursor:pointer;"> <a href="?id=<?php echo $item['category_id'];?>" style="color:white; text-decoration:none;">Delete</a> </button>
+                                                    <input type="hidden" name="cate_id" value="<?= $item['cart_id']; ?>">
+                                                    <button type="submit" name="delete_order_btn" style="background-color:rgb(247, 8, 84); color:white; text-decoration:none; padding:12px 32px; border-radius:15px; cursor:pointer;"> <a href="?id=<?php echo $item['cart_id'];?>" style="color:white; text-decoration:none;">Delete</a> </button>
                                                 </form>
                                                 </td>
                                             </tr>
@@ -118,9 +108,9 @@
        <!-- <?php
                 if(isset($_GET['id']))
                 {
-                    $products_id = $_GET['id'];
+                    $orders_id = $_GET['id'];
 
-                    $delete_query = "DELETE FROM product WHERE product_id='$products_id'";
+                    $delete_query = "DELETE FROM orders WHERE cart_id='$orders_id'";
                     $delete_query_run = mysqli_query($con, $delete_query);
 
                     if($delete_query_run)
