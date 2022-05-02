@@ -33,6 +33,8 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"">
       <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
       <link rel="stylesheet" href="../checkout/checkout.css">
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="footer.css">
    </head>
    <body>
       <div class="checkoutlogo">
@@ -175,7 +177,9 @@
       </div>
 
     
-
+      <?php
+	require('footer.php');
+?>
 
 
 

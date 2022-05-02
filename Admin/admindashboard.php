@@ -45,7 +45,14 @@
                 <div class="cards">
                     <div class="card">
                         <div class="box">
-                            <h1>0</h1>
+                            <?php
+                                    $query = "SELECT cart_id FROM orders ORDER BY cart_id";
+                                    $query_run = mysqli_query($con, $query);
+
+                                    $row = mysqli_num_rows($query_run);
+
+                                    echo '<h1>'.$row.'</h1>'
+                            ?>
                             <h3>Orders</h3>
                         </div>
                         <div class="icon-design">

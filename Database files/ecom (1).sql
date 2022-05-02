@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 28, 2022 at 08:35 AM
+-- Generation Time: May 02, 2022 at 04:57 AM
 -- Server version: 5.7.36
 -- PHP Version: 7.4.26
 
@@ -45,6 +45,34 @@ INSERT INTO `adminlogin` (`admin_id`, `admin_user_name`, `admin_password`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cart`
+--
+
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE IF NOT EXISTS `cart` (
+  `cart_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `p_name` varchar(255) NOT NULL,
+  `unit_price` int(11) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `total_product_price` int(11) DEFAULT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`cart_id`,`product_id`),
+  UNIQUE KEY `cart_id` (`cart_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `product_id`, `p_name`, `unit_price`, `qty`, `total_product_price`, `time`) VALUES
+(26, 174, 'Cotton T-Shirt', 2800, 1, NULL, '2022-04-28 21:44:42'),
+(27, 129, 'Camera Backpack', 10000, 1, NULL, '2022-04-28 21:48:30'),
+(28, 196, 'Nike Air Max Verona', 8000, 1, NULL, '2022-04-29 09:32:11');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `category`
 --
 
@@ -54,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `category` (
   `category_name` varchar(100) NOT NULL,
   `c_description` varchar(300) NOT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `category`
@@ -68,6 +96,57 @@ INSERT INTO `category` (`category_id`, `category_name`, `c_description`) VALUES
 (24, 'Men clothing', 'Branded'),
 (23, 'Women clothing', 'Branded '),
 (26, 'cameras', 'All type of cameras');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orderdetails`
+--
+
+DROP TABLE IF EXISTS `orderdetails`;
+CREATE TABLE IF NOT EXISTS `orderdetails` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `phone` int(10) NOT NULL,
+  `address` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  `paymentmethod` varchar(255) COLLATE utf8mb4_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+--
+-- Dumping data for table `orderdetails`
+--
+
+INSERT INTO `orderdetails` (`id`, `name`, `email`, `phone`, `address`, `paymentmethod`) VALUES
+(1, 'Gagana Chiranjitha', 'gaganachiranjithacoc2@gmail.com', 777123456, 'C3/4 Temple Road,colombo 10', 'creditcard');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE IF NOT EXISTS `orders` (
+  `cart_id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_id` int(11) NOT NULL,
+  `p_name` varchar(255) NOT NULL,
+  `unit_price` int(11) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `total_product_price` int(11) DEFAULT NULL,
+  PRIMARY KEY (`cart_id`,`product_id`),
+  UNIQUE KEY `cart_id` (`cart_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`cart_id`, `product_id`, `p_name`, `unit_price`, `qty`, `total_product_price`) VALUES
+(22, 191, 'Nike ZX', 5000, 1, NULL),
+(23, 191, 'Nike ZX', 5000, 1, NULL),
+(24, 176, 'Cotton T-Shirt', 1000, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -88,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `p_image` varchar(250) NOT NULL,
   `p_qty` int(20) NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=205 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=207 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `product`
