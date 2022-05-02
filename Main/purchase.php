@@ -36,7 +36,7 @@
    </head>
    <body>
       <div class="checkoutlogo">
-         <h2><img class="checklogo" src="logo.png"><span>Haay Checkout</span></h2>
+         <a href="index.php"><h2><img class="checklogo" src="logo.png"></a><span>Haay Checkout</span></h2>
       </div>
       <div class="rowc">
          <div class="col-75">
@@ -142,7 +142,7 @@
                                           <div class="col-md-3 price">
                                              <span><?php echo $row['unit_price']?></span>
                                           </div>
-                                          &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-update">Update</button>
+                                          &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-update">Delete</button>
                                        </div>
                                     </div>
                                  </div>
