@@ -27,7 +27,7 @@
                </div>
                <nav>
                   <ul>
-                     <li><a href="register.php">Register</a></li>
+                     <li><a href="newlogin.html">Login</a></li>
                      <li><a href="shoses.html">Shose</a></li>
                      <li><a href="electronics.html">Electronics</a></li>
                      <li><a href="mcloths.html">Men's Clothing</a></li>
