@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< Updated upstream
 <?php
 <<<<<<< HEAD
 =======
@@ -28,12 +29,15 @@ session_start();
    
    }
    ?>
+=======
+>>>>>>> Stashed changes
 <html>
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>checkout page</title>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<<<<<<< Updated upstream
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"">
       <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
       
@@ -48,16 +52,28 @@ session_start();
             <h2><img class="checklogo" src="logo.png">
          </a>
          <span>Haay Checkout</span></h2>
+=======
+      <link rel="stylesheet" href="../checkout/checkout.css">
+   </head>
+   <body>
+      <div class="checkoutlogo">
+         <h2><img class="checklogo" src="logo.png"><span>Haay Checkout</span></h2>
+>>>>>>> Stashed changes
       </div>
       <div class="rowc">
          <div class="col-75">
             <div class="containerc">
+<<<<<<< Updated upstream
                <form method="POST" enctype="multipart/form-data" action="">
+=======
+               <form action="">
+>>>>>>> Stashed changes
                   <div class="rowc">
                      <div class="bill-info">
                         <h3>Billing Address</h3>
                         <label for="fname"><i class="fa fa-user"></i>Full Name</label>
                         <input type="text" id="fname" name="firstname" placeholder ="Enter you name">
+<<<<<<< Updated upstream
                         <label for="email"><i class="fa fa-envelope"></i>Email</label>
                         <input type="text" id="email" name="email" placeholder ="john@gmail.com">
                         <label for="telephone"><i class="fa-solid fa-mobile-screen-button"></i>Telephone</label>
@@ -69,6 +85,28 @@ session_start();
                               <div class="col-50">
                                  <input type="checkbox" checked="checked" name="sameadr">Shipping same as Billing
                                  </label>
+=======
+
+                        <label for="email"><i class="fa fa-envelope"></i>Email</label>
+                        <input type="text" id="email" name="email" placeholder ="john@gmail.com">
+
+                        <label for="telephone"><i class="fa-solid fa-mobile-screen-button"></i>Telephone</label>
+                        <input type="text" id="tp" name="tp" placeholder ="077-1231231">
+
+                        <label for="adr"><i class="fa-solid fa-location-dot"></i>Address</label>
+                        <input type="text" id="adr" name="address" placeholder ="home address">
+                       
+                     
+                	
+                        <div class="cart">
+                           
+                           <div class="rowc">
+                              <div class="col-50">
+                                
+                                 <input type="checkbox" checked="checked" name="sameadr">Shipping same as Billing
+                                 </label>
+								 
+>>>>>>> Stashed changes
                                  <div class="col-50">
                                     <h3>Payment Method</h3>
                                     <input type="radio" id="pmethod" name ="pmethod" value="creditcard"> Using credit cards
@@ -99,6 +137,7 @@ session_start();
                                     </div>
                                  </div>
                               </div>
+<<<<<<< Updated upstream
                               <input type="submit" name="checkout" value="Continue to checkout" class="btnc">
                            </div>
                         </div>
@@ -204,4 +243,24 @@ session_start();
          swal("Purchase successfully!", "Your order has been shipped!", "success");
       }
    </script>
+=======
+                              <input type="submit" value="Continue to checkout" class="btnc">
+                           </div>
+                        </div>
+                     </div>
+					</div>
+               </form>
+            </div>
+            </div>
+            <div class="col-25 cart">
+               <div class="containerc">
+                  <h4>Cart<span class="price" style="color:black"><i class="fa fa-shopping-cart"></i><b>2</b></span></h4>
+                  <p><a href="#">product 1</a><span class="price">$20</span></p>
+               </div>
+            </div>
+         </div>
+		</div>
+      </div>
+   </body>
+>>>>>>> Stashed changes
 </html>
