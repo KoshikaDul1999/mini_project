@@ -1,0 +1,45 @@
+<html> 
+    <head> 
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+	
+	<title>User Loging</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" >
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	<link rel="stylesheet" href="login.css">
+    </head>
+    <body>
+	<img src="cart.png"width="100px"height="100px">
+	<center><div class="title">User Login</div></center><br>
+	
+    <center><div class="container2">
+	<div class="brand_logo_container">
+    <img src="icon.png"width="100px"height="100px"alt="Logo"><br>
+	</div>
+	        
+            <form name="loginForm" action="loginvalidate.php" method="post">
+                <div class="user-details">
+				    
+                    <div class="input-box">
+                        <i class="fas fa-user"></i></span>   user Name</label><br>
+                       <input type="text" name="username" id="username"placeholder="username" required>
+                    </div>
+				
+                    <div class="input-box">
+                        <i class="fas fa-key"></i>  Password<br>
+                        <input type="password" name="pwd" id="pass"placeholder="password" required>
+                    </div>
+                    <div class="button">
+                       <center><input type="submit" class="log" value="login" name="loging" /></center>
+                        
+                    </div>
+					
+					<center>New to our website?    <a href="register.php">Sign Up</a></center>
+                </div>
+            </form>
+            
+        </div></center>
+</body>
+</html>

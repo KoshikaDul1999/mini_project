@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <?php
+<<<<<<< HEAD
+=======
+
+session_start(); 
+
+>>>>>>> 88cc31c0115db33256b65c0f39e8dae4c1dedea7
    include ("connection.php");
    
    if(isset($_POST['checkout'])){
@@ -30,6 +36,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"">
       <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      
       <link rel="stylesheet" href="../checkout/checkout.css">
       <link rel="stylesheet" href="style.css">
       <link rel="stylesheet" href="footer.css">
@@ -101,6 +108,11 @@
             </div>
          </div>
          <div class="col-25 cart">
+<<<<<<< HEAD
+=======
+      
+         <div class="col-25 cart">
+>>>>>>> 88cc31c0115db33256b65c0f39e8dae4c1dedea7
          <div class="content">
                   <div class="row">
                      <div class="col-md-12 col-lg-8">
@@ -161,17 +173,35 @@
                            <div class="summary-item"><span class="text">Discount</span><span class="price">$0</span></div>
                            <div class="summary-item"><span class="text">Shipping</span><span class="price">$0</span></div>
                            <div class="summary-item"><span class="text">Total</span><span class="price"><?php if($tot>0){echo $tot;} ?></span></div>
+<<<<<<< HEAD
                            <button type="button" class="btn btn-primary btn-lg btn-block"><a href="purchase.php"> Checkout</button></a>
+=======
+                           <button type="button" name="pay" onclick="alert()" class="btn btn-primary btn-lg btn-block"><a href="purchase.php"> Pay now</button></a>
+>>>>>>> 88cc31c0115db33256b65c0f39e8dae4c1dedea7
                         </div>
                      </div>
                   </div>
                </div>
          </div>
+<<<<<<< HEAD
       </div>
+=======
+      </div>
+      </div>
+      </div>
+
+         </div>
+      </div>
+>>>>>>> 88cc31c0115db33256b65c0f39e8dae4c1dedea7
       </div>
       </div>
       <?php
          require('footer.php');
          ?>
    </body>
+   <script>
+      function alert(){
+         swal("Purchase successfully!", "Your order has been shipped!", "success");
+      }
+   </script>
 </html>
