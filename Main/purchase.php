@@ -180,7 +180,7 @@ session_start();
                                              </div>
                                           </div>
                                           <div class="col-md-4 quantity">
-                                             <label for="quantity">Quantity:</label>
+                                           <!--  <label for="quantity">Quantity:</label>-->
                                              <!----<form method="POST" action="<?php echo $_SERVER["PHP_SELF"];?>">-->
                                           <td><input type="number" class="iquantity" onchange='subtotal()' min='1' max='100' value ="<?php echo $value['p_qty']?>"></td>
                                           </div>
@@ -189,7 +189,7 @@ session_start();
                                           </div>
 
                                              <form action="manage_cart.php" method="POST">
-                                             &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-update">Update</button>
+                                            <!-- &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-update">Update</button>-->
                                           &nbsp;&nbsp;&nbsp;&nbsp;<button class="btn-update" name="remove">Remove</button>
                                           <input type="hidden" name="p_id" value="<?php echo $value['p_id'];?>">
                                              </form>
